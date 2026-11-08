@@ -1,0 +1,32 @@
+<linker>
+  
+  <!--整个程序集-->
+  <!--assembly fullname="Unity.Mono" preserve="all"/-->
+
+  <!--指定程序集中的指定命名空间-->
+  <!--assembly fullname="JsonDotNet">
+    <namespace fullname="Newtonsoft.Json" preserve="all"/>
+  </assembly-->
+
+  <!--指定程序集某个类-->
+  <assembly fullname="mscorlib">
+    <type fullname="System.DateTimeOffset" preserve="all"/>
+    <type fullname="System.DateTime" preserve="all"/>
+    <type fullname="System.Reflection.MethodInfo" preserve="all"/>
+    <type fullname="System.Threading.Tasks" preserve="all"/>
+  </assembly>
+
+  <assembly fullname="UnityEngine.CoreModule">
+    <type fullname="UnityEngine.Application" preserve="all"/>
+  </assembly>
+  
+  <assembly fullname="System.Core">
+    <type fullname="System.Linq" preserve="all"/>
+  </assembly>
+  
+  <assembly fullname="YooAsset">
+    <type fullname="YooAsset.DefaultWebServerFileSystem" preserve="all" />
+    <type fullname="YooAsset.DefaultWebRemoteFileSystem" preserve="all" />
+  </assembly>
+  
+</linker>

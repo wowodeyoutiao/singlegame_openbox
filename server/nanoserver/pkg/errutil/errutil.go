@@ -1,0 +1,177 @@
+package errutil
+
+import (
+	"errors"
+)
+
+var (
+	ErrBadRoute               = errors.New("bad route")
+	ErrWrongType              = errors.New("wrong type")
+	ErrNotFound               = errors.New("not found")
+	ErrUserNameExists         = errors.New("user name exists")
+	ErrIllegalParameter       = errors.New("illegal parameter")
+	ErrDBOperation            = errors.New("database opertaion failed")
+	ErrNotRSAPublicKey        = errors.New("not a rsa public key")
+	ErrNotRSAPrivateKey       = errors.New("not a rsa private key")
+	ErrAuthFailed             = errors.New("auth failed")
+	ErrIllegalLoginType       = errors.New("illegal login type")
+	ErrWrongPassword          = errors.New("wrong password")
+	ErrUserNameNotFound       = errors.New("username not found")
+	ErrInitFailed             = errors.New("initialize failed")
+	ErrServerInternal         = errors.New("server internal error")
+	ErrCacheOperation         = errors.New("cache opertaion failed")
+	ErrPermissionDenied       = errors.New("permission denied")
+	ErrNotImplemented         = errors.New("not implemented")
+	ErrUserNotFound           = errors.New("user not found")
+	ErrTokenNotFound          = errors.New("token not found")
+	ErrInvalidToken           = errors.New("invalid token")
+	ErrIllegalName            = errors.New("illegal user name")
+	ErrTokenMismatchUser      = errors.New("token mismatch user")
+	ErrInvalidPayPlatform     = errors.New("invalid pay platform")
+	ErrUnsupportSignType      = errors.New("unsupport sign type")
+	ErrOrderNotFound          = errors.New("order not found")
+	ErrInvalidParameter       = errors.New("invalid parameter")
+	ErrRequestFailed          = errors.New("request failed")
+	ErrIllegalOrderType       = errors.New("illegal order type")
+	ErrCoinNotEnough          = errors.New("货币不足")
+	ErrFrequencyLimited       = errors.New("frequency limited")
+	ErrVerifyFailed           = errors.New("verify failed")
+	ErrSignFailed             = errors.New("sign failed")
+	ErrTradeExisted           = errors.New("trade has existed")
+	ErrProviderNotFound       = errors.New("provider not found")
+	ErrThirdAccountNotFound   = errors.New("third account not found")
+	ErrWrongThirdLoginType    = errors.New("wrong third login type")
+	ErrDirNotExists           = errors.New("directory not exists")
+	ErrPayTestDisable         = errors.New("pay test disable")
+	ErrPropertyNotFound       = errors.New("property not found")
+	ErrIllegalDeskStatus      = errors.New("illegal desk status")
+	ErrPlayerNotFound         = errors.New("player not found")
+	ErrNoSuchWinPoints        = errors.New("no such win points")
+	ErrDismatchTileNum        = errors.New("a shortage or surplus of tiles")
+	ErrNotWon                 = errors.New("not won now")
+	ErrDeskNotFound           = errors.New("房间类型不存在")
+	ErrUUIDNotFound           = errors.New("uuid not found")
+	ErrProductionNotFound     = errors.New("production not found")
+	ErrRequestPrePayIDFailed  = errors.New("request prepay id failed")
+	ErrAccountExists          = errors.New("用户昵称重复")
+	ErrTokenInvalid           = errors.New("无效的token")
+	ErrTokenMalFormed         = errors.New("token 尚未激活")
+	ErrTokenNotActiveYet      = errors.New("token 格式不正确")
+	ErrMailNotFound           = errors.New("mail not found")
+	ErrCreateMonter           = errors.New("create monster failed")
+	ErrItemNotFound           = errors.New("item not found")
+	ErrBagFull                = errors.New("包裹已满")
+	ErrConfigNotFound         = errors.New("config not found")
+	ErrChooseRole             = errors.New("请选择正确账号")
+	ErrRoleNameLen            = errors.New("名字长度不符合,2-7个汉字或6-21个英文")
+	ErrChooseRound            = errors.New("非当前轮次")
+	ErrGetAward               = errors.New("已领取过")
+	ErrNotFindAward           = errors.New("没有发现奖励")
+	ErrInvalidTarget          = errors.New("目标无法攻击")
+	ErrSkillCoolDown          = errors.New("技能冷却时间未到")
+	ErrOutOfRange             = errors.New("超出攻击距离")
+	ErrInvalidPoint           = errors.New("无效坐标")
+	ErrItemNotEnough          = errors.New("道具不足")
+	ErrNotCanBuy              = errors.New("没有购买额度")
+	ErrActivation             = errors.New("验证码不存在")
+	ErrActivationGet          = errors.New("验证码已激活")
+	ErrAlreadyInRoom          = errors.New("已经在房间中")
+	ErrEquiptype              = errors.New("装备类型不匹配")
+	ErrEquipSlot              = errors.New("无效的装备槽")
+	ErrSkillsSlot             = errors.New("无效的技能槽")
+	ErrGenStoneSlot           = errors.New("无效的宝石槽位")
+	ErrSkillsSlotSpecial      = errors.New("非特殊技能")
+	ErrLevel                  = errors.New("等级不足")
+	ErrGender                 = errors.New("性别不匹配")
+	ErrJob                    = errors.New("职业不匹配")
+	ErrActivityExpire         = errors.New("活动已结束")
+	ErrTaskNotFound           = errors.New("无效任务")
+	ErrTaskStatus             = errors.New("任务状态不匹配")
+	ErrPrivilegeExist         = errors.New("已经拥有此类特权卡")
+	StarsSuccess              = errors.New("升星成功")
+	StarsError                = errors.New("升星失败")
+	ComposeError              = errors.New("合成失败")
+	StarsNoUseError           = errors.New("没有可升星的装备")
+	ErrMaxLevel               = errors.New("超过最大等级")
+	ErrSensitiveWord          = errors.New("含有敏感字符")
+	ErrCannotAttack           = errors.New("无法攻击")
+	ErrMailMax                = errors.New("邮件已满")
+	ErrTrans                  = errors.New("转账失败")
+	ErrRealName               = errors.New("实名认证失败")
+	SMSExpire                 = errors.New("验证码过期")
+	ErrOpenBoxEmpty           = errors.New("开箱失败")
+	ErrOpenBoxEnough          = errors.New("先处理宝箱数据")
+	ErrEnergyFull             = errors.New("超过最大可使用次数")
+	ErrPartnerInvalid         = errors.New("伙伴无效")
+	ErrPetFull                = errors.New("宠物已满")
+	ErrPetInvalid             = errors.New("invalid pet slot")
+	ErrPetAlreadyInSlot       = errors.New("pet already in slot")
+	ErrComposeError           = errors.New("无法合成")
+	ErrPetLevelNotEnough      = errors.New("宠物等级不足")
+	ErrBoxRecovery            = errors.New("宝箱正在升级中")
+	ErrPartnerSlotNil         = errors.New("伙伴未上阵")
+	ErrVipLevel               = errors.New("vip等级不足")
+	ErrGuildNotFound          = errors.New("工会不存在")
+	ErrGuildMemberExist       = errors.New("已在公会中")
+	ErrGuildPermission        = errors.New("工会权限不足")
+	ErrGuildMemberNotFound    = errors.New("工会成员不存在")
+	ErrApplyRepeat            = errors.New("重复申请")
+	ErrAlreadyReceived        = errors.New("已领取过奖励")
+	ErrNotEligibleForReward   = errors.New("不符合领取奖励条件")
+	ErrBuffAlreadyExist       = errors.New("道具效果仍在生效中，请不要重复使用！")
+	ErrElementSlot            = errors.New("无效的元素槽位")
+	ErrElementSlotBrake       = errors.New("元素槽位需要突破")
+	ErrCreatePreOrderFailed   = errors.New("创建预订单失败")
+	ErrNeedSweep              = errors.New("需要扫荡")
+	ErrNoNeedSweep            = errors.New("不能扫荡")
+	ErrUpLevel                = errors.New("赋能失败")
+	ErrReLogin                = errors.New("请重新登录")
+	ErrItemUseLimit           = errors.New("道具使用次数达到上限")
+	ErrQuickClick             = errors.New("点击过快")
+	ErrFunctionNoOpen         = errors.New("功能未开放")
+	ErrAvatarNotFound         = errors.New("头像信息未找到")
+	ErrFrameNotFound          = errors.New("头像框信息未找到")
+	ErrAvatarExpired          = errors.New("头像已过期")
+	ErrAvatarFrameExpired     = errors.New("头像框已过期")
+	ErrRefineNoExist          = errors.New("洗练属性不存在")
+	ErrInvalidCharacterSlot   = errors.New("无效的角色槽位")
+	ErrInvalidEquipmentSlot   = errors.New("无效的装备槽位")
+	ErrInvalidRefinedSlot     = errors.New("无效的洗练槽位")
+	ErrBadRequest             = errors.New("无效的请求参数")
+	ErrRefineNoTempAttrs      = errors.New("请先洗练出属性，再进行替换")
+	ErrMainBattle             = errors.New("主线副本未达标")
+	ErrInvalidArtifact        = errors.New("无效神兵")
+	ErrArtifactEquipLimit     = errors.New("神兵装备数量已达上限")
+	ErrPushingWallNotEnough   = errors.New("挑战次数不足")
+	ErrMute                   = errors.New("禁言中")
+	ErrPreTalentNotEnough     = errors.New("前置天赋不足")
+	ErrCommonTalentPointLimit = errors.New("通用天赋点数使用已达上限")
+)
+
+// Code code for the error
+func Code(err error) int {
+	if c, ok := errs[err]; ok {
+		return c
+	}
+	return Unknown
+}
+
+type BizError struct {
+	Code    int32  // 用于程序逻辑判断和错误分类; 示例: 1001, 2001, 5001 等
+	Reason  string // 开发者调试和日志记录; 示例: "user_not_found", "permission_denied", "invalid_token"
+	Message string // 直接展示给用户看的错误信息; 示例: "用户不存在", "权限不足", "登录已过期"
+}
+
+// Error 实现 error 接口
+func (b *BizError) Error() string {
+	return b.Message
+}
+
+// NewBizError 创建一个新的业务错误
+func NewBizError(code int32, reason, message string) *BizError {
+	return &BizError{
+		Code:    code,
+		Reason:  reason,
+		Message: message,
+	}
+}

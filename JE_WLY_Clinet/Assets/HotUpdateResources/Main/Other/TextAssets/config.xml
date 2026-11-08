@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Config>
+	<BaseValue>
+
+      <global  rolenum="2"/> <!-- rolenum为最大可创建角色数量-->
+      <crit k="0.005"  prevalue="4" critdamage="1200"/><!--用来配置暴击率的系数K以及固定常量，还有暴击伤害的基础伤害万分比的分子-->
+      <extrovalue stunvalue="500"  poisonvalue="500" stunround="1" poisonround="2" /><!--用来配置抗晕值的分母参数、毒抗值的分母参数\回合制中眩晕持续回合数、中毒持续回合数-->
+      <power defvalue="100"  lifevalue="1" attackvalue="1" hitvalue="10" dodgevalue="10" critvalue="30" toughness="10" stunvalue="10" stun_resistance="5" poisonvalue="10" poison_resistance="5" reduce_N="30" reduce_M="30"/><!--用来配置计算战斗力的防御系数、有效生命系数、有效输出系数、命中、闪避、暴击、韧性、击晕、抗晕、上毒、抗毒系数、减伤参数N、减伤参数M-->
+      <bagnum totlenum="1200"  equipnum="200" itemnum="1000"/><!--用来配置总包裹的格子数量、装备包裹的格子数量、其他道具的格子数量-->
+      <energy fullvalue="50"  maxvalue="500" timeinterval="5" buytime_peace="300" consumeenergy_peace="6" buytime_war="480" consumeenergy_war="10"/><!--用来配置体力值的满进度值、最大可累积值、恢复一点需要的分钟、体力值兑换时间（ms）、兑换一次时间需要消耗体力值-->
+      <rename  needitem="5" neednum="1000"/><!--用来配置修改角色名称所需要的道具和数量-->
+      <mailfreshtime time="1"/><!--用来配置邮件的有效时间，单位为天-->
+      <equipstrenghthen rate="1"/><!--用来配置装备强化最高等级与角色等级之间的倍率-->
+      <chatconsume id="1" num="20000"/><!--用来配置世界频道聊天需要消耗的道具id和数量-->
+      <equipstar maxlevel="30"/><!--用来配置升星的最高等级-->
+      <rolelevel maxlevel="150"/><!--用来配置角色最高的升级等级-->
+      <bonus rate="0.08"/><!--用来配置充值转化为红包总量的比例-->
+      <mailmax num="200"/><!--用来配置邮件的最大上限数量-->
+      <nature rate="1000"/><!--用来配置宝石合成时带有自然属性的几率，数值为万分比分子-->
+      <autobattle viplevel="2"/><!--用来配置自动战斗功能开启所需要的vip等级-->
+      <guidemap time="120"/><!--用来配置新手引导副本的持续时间-->
+      <autodecompose viplevel="2" rolelevel="65"/><!--用来配置自动分解功能开启所需要的vip等级或者角色等级-->
+      <onlinebattle basetime="7200" triggertime="10" limittime="1"/><!--basetime用来配置主界面默认在线挂机时间，单位秒;triggertime用来配置事件触发间隔，单位秒；limittime用来配置点击间隔，单位秒-->
+      <offlineEXP gaptime="60" basevalue="100" limittime="36000" limitrate="25"/><!--gaptime用来配置离线经验的获取时间间隔，单位秒;basevalue用来配置默认的单位时间内的经验获取量，没有填0；limittime用来配置每天最多累积离线经验的时间，单位秒；limitrate用来配置经验池最高累积倍率-->
+      <petbag totlenum="20"  /><!--用来配置宠物包裹的总数量-->
+      <petbuy itemid="5" needmoney="2000"  /><!--用来配置第二档宠物蛋购买的消耗-->
+      <petfree recovertime="180" maxnum="5"  /><!--用来配置第一档宠物蛋免费恢复的时间间隔（分），最大可恢复数量-->
+      <boxlevelup itemid="99" accelerate="300"  /><!--用来配置加速卷轴可以提升多少时间，单位为秒-->
+      <expstore rate="500"  /><!--用来配置经验池最大累积经验是主角当前升级所需经验的倍率-->
+      <expcopy dailytime="1800" lastday="30" /><!--用来配置挂机副本每天可挂机时间，持续多少天（持续时间目前未生效）-->
+      <serverlimit maxnum="2000"/><!--用来配置单服最大能注册多少角色-->
+      <PVPinitscore num="1000"/><!--用来配置大乱斗玩法中即时赛和回合赛的初始分数-->
+      <Maxuselimit num="999"/><!--用来配置包裹内叠加可使用道具一次性最高可使用的数量-->
+      <InitialIcon avatar="35001" avatarframe="35028"/><!--用来配置默认的头像资源和头像框资源-->
+      <ValueRefine RandomID="1" RandomNum="100000" AssignID="57" AssignNum="1"  /><!--用来配置随机洗炼所需道具ID&数量以及定向洗炼所需道具ID&数量-->
+      <Fatecoin rate="100" autotime="5" awardid="5" awardnum="100"/> <!--用来配置战役中命运金币的出现几率、自动翻牌倒计时（秒）、挑战后的结算奖励-->
+      <Offlinebox interval="60" maxnum="15" equipnum="15" /> <!--用来配置离线宝箱每隔多久（分钟）增加1个，最多累积多少个箱子，使用1个箱子给多少件装备-->
+      <Epicweapon maxnum="3"/> <!--用来配置神兵最大上阵数量-->
+
+  </BaseValue>
+
+  <Equipquality><!-- 用来配置不同品质装备的品质参数-->
+
+      <key ID="1" value="1" prefix="陈旧的"/>
+      <key ID="2" value="1.25" prefix="普通的"/>
+      <key ID="3" value="1.55" prefix="改良的"/>
+      <key ID="4" value="1.95" prefix="精铸的"/>
+      <key ID="5" value="2.5" prefix="优异的"/>
+      <key ID="6" value="3.2" prefix="稀有的"/>
+      <key ID="7" value="4.2" prefix="完美的"/>
+      <key ID="8" value="5.5" prefix="无双的"/>
+
+  </Equipquality>
+
+  <Petbag><!-- 用来配置主角等级解锁的宠物包裹数量-->
+
+      <key Level="1" value="10" />
+      <key Level="1" value="11" />
+      <key Level="1" value="12" />
+      <key Level="1" value="13" />
+      <key Level="1" value="14" />
+      <key Level="1" value="15" />
+      <key Level="1" value="16" />
+      <key Level="1" value="17" />
+      <key Level="1" value="18" />
+      <key Level="1" value="19" />
+      <key Level="1" value="20" />
+
+  </Petbag>
+
+   <Copyset><!-- 用来配置玩法中不同副本的挑战次数，id为副本类型，num为每天的免费次数-->
+
+      <key id="15" num="5" />
+      <key id="17" num="10" />
+
+  </Copyset>
+
+
+<PetAdvance><!-- 用来配置战宠进阶功能的道具使用以及几率配置-->
+
+  <basevalue><!-- 用来配置材料的基础增加数值--> 
+    <item id="84" num="10" />
+    <item id="85" num="40" />
+    <item id="86" num="150" />
+    <item id="87" num="500" />
+  </basevalue> 
+  <rate><!-- 用来配置通用的暴击几率，“rate”代表倍率；“pro”代表万分比的分子--> 
+    <stage rate="1" Pro="7000" />
+    <stage rate="2" Pro="2000" />
+    <stage rate="3" Pro="1000" />
+  </rate>   
+
+</PetAdvance>
+
+  <Partnerquality><!-- 用来配置不同品质伙伴升级的品质参数-->
+
+      <key ID="1" value="1"/>
+      <key ID="2" value="1.25"/>
+      <key ID="3" value="1.55"/>
+      <key ID="4" value="2.5"/>
+      <key ID="6" value="4"/>
+      <key ID="7" value="6"/>
+      <key ID="8" value="10"/>
+
+  </Partnerquality>
+
+  <Petquality><!-- 用来配置不同品质宠物升级的品质参数-->
+
+      <key ID="1" value="1"/>
+      <key ID="2" value="1.25"/>
+      <key ID="3" value="1.55"/>
+      <key ID="4" value="1.95"/>
+      <key ID="6" value="2.5"/>
+      <key ID="7" value="3.5"/>
+      <key ID="8" value="6"/>
+
+  </Petquality>
+
+  <Petlevel><!-- 用来配置不同品质宠物升级所需经验的品质参数-->
+
+      <key ID="1" value="1"/>
+      <key ID="2" value="1"/>
+      <key ID="3" value="1.55"/>
+      <key ID="4" value="1.95"/>
+      <key ID="6" value="2.5"/>
+      <key ID="7" value="3.5"/>
+      <key ID="8" value="6"/>
+
+  </Petlevel>
+
+  <autodecompose><!-- 配置自动分解的选项-->
+
+      <key quality="1" level="10"  qualityswitch="0" levelswitch="0" keepbetterswitch="1"/>
+
+  </autodecompose>  
+
+  <initial><!-- 配置角色&伙伴各职业的初始的移动速度和攻击速度-->
+
+    <key job="1" attackspeed="500" movespeed="180" />
+    <key job="2" attackspeed="500" movespeed="180" />
+    <key job="3" attackspeed="500" movespeed="180" />
+    <key job="11" attackspeed="500" movespeed="150" />
+    <key job="12" attackspeed="500" movespeed="180" />
+    <key job="13" attackspeed="500" movespeed="180" />
+
+  </initial>  
+
+  <redbag><!-- 配置权益卡对应多少钱，单位为分-->
+
+    <key ID="14" value="10" />
+    <key ID="15" value="11" />
+    <key ID="16" value="12" />
+    <key ID="17" value="13" />
+    <key ID="18" value="14" />
+    <key ID="19" value="15" />
+    <key ID="20" value="16" />
+
+  </redbag>  
+
+  <Revive><!-- 副本内死亡复活的每次道具消耗,time：用来配置第几次复活；needMoneyID：用来配置需要的货币道具ID；num：用来配置所需要消耗的货币数量-->
+
+    <key time="1" needMoneyID="5" num="10" />
+    <key time="2" needMoneyID="5" num="20" />
+    <key time="3" needMoneyID="5" num="30" />
+
+  </Revive>
+
+  <VIP><!-- 用来配置VIP的等级和充值档位-->
+
+      <key vipLevel="1" needMoney="10" />
+      <key vipLevel="2" needMoney="50" />
+      <key vipLevel="3" needMoney="150" />
+      <key vipLevel="4" needMoney="500" />
+      <key vipLevel="5" needMoney="800" />
+      <key vipLevel="6" needMoney="2000" />
+      <key vipLevel="7" needMoney="6000" />
+      <key vipLevel="8" needMoney="16000" />
+      <key vipLevel="9" needMoney="55000" />
+      <key vipLevel="10" needMoney="100000" />
+
+  </VIP>
+
+  <selectquality>
+      <key ID="0" option="全部品质" />
+      <key ID="7" option="红色以上品质" />
+      <key ID="6" option="橙色以上品质" />
+      <key ID="4" option="紫色以上品质" />
+      <key ID="3" option="蓝色以上品质" />
+      <key ID="2" option="绿色以上品质" />
+      <key ID="1" option="白色以上品质" />
+    </selectquality><!-- 用来配置伙伴和宠物上阵时的品质筛选条件-->
+
+  <sifting><!-- 用来配置批量分解中的筛选条件-->
+    <quality>
+      <key ID="1" option="全部品质" />
+      <key ID="2" option="白色以下品质" />
+      <key ID="3" option="绿色以下品质" />
+      <key ID="4" option="蓝色以下品质" />
+      <key ID="5" option="紫色以下品质" />
+      <key ID="6" option="粉色以下品质" />
+      <key ID="7" option="橙色以下品质" />
+      <key ID="8" option="红色以下品质" />
+    </quality><!-- 用来配置批量分解中的品质筛选条件-->
+
+    <level>
+      <key ID="1" option="全部等级" />
+      <key ID="2" option="10级以下" />
+      <key ID="3" option="20级以下" />
+      <key ID="4" option="30级以下" />
+      <key ID="5" option="40级以下" />
+      <key ID="6" option="50级以下" />
+      <key ID="7" option="60级以下" />
+      <key ID="8" option="70级以下" />
+      <key ID="9" option="80级以下" />
+      <key ID="10" option="90级以下" />
+      <key ID="11" option="100级以下" />
+      <key ID="12" option="110级以下" />
+    </level><!-- 用来配置批量分解中的等级筛选条件-->
+
+  </sifting>
+
+<RolePanel><!-- 用来配置角色属性面板的显示，type：1代表固定值；2代表百分比；category：1代表基础属性；2代表特殊属性；priority：面板上显示的顺序；show：用来控制是否在面板上显示，0不显示，1显示-->
+
+  <key id="1" name="物攻" type="1" category="1" priority="1" show="1"/>
+  <key id="2" name="魔攻" type="1" category="1" priority="2" show="1"/>
+  <key id="4" name="物防" type="1" category="1" priority="3" show="1"/>
+  <key id="5" name="魔防" type="1" category="1" priority="4" show="1"/>
+  <key id="6" name="闪避" type="1" category="2" priority="9" show="1"/>
+  <key id="7" name="命中" type="1" category="2" priority="8" show="1"/>
+  <key id="8" name="暴击值" type="1" category="2" priority="10" show="1"/>
+  <key id="9" name="韧性值" type="1" category="2" priority="11" show="1"/>
+  <key id="10" name="攻速" type="1" category="1" priority="6" show="1"/>
+  <key id="11" name="移速" type="1" category="1" priority="7" show="1"/>
+  <key id="12" name="生命" type="1" category="1" priority="5" show="1"/>
+  <key id="13" name="物攻" type="2" category="2" priority="12" show="0"/>
+  <key id="14" name="魔攻" type="2" category="2" priority="13" show="0"/>
+  <key id="15" name="生命" type="2" category="2" priority="16" show="0"/>
+  <key id="16" name="物防" type="2" category="2" priority="14" show="0"/>
+  <key id="17" name="魔防" type="2" category="2" priority="15" show="0"/>
+  <key id="18" name="闪避" type="2" category="2" priority="18" show="1"/>
+  <key id="19" name="命中" type="2" category="2" priority="17" show="1"/>
+  <key id="20" name="暴击值" type="2" category="2" priority="19" show="1"/>
+  <key id="21" name="韧性值" type="2" category="2" priority="20" show="1"/>
+  <key id="22" name="攻速" type="2" category="2" priority="21" show="1"/>
+  <key id="23" name="移速" type="2" category="2" priority="22" show="1"/>
+  <key id="24" name="暴伤" type="2" category="2" priority="23" show="1"/>
+  <key id="25" name="对人增伤" type="2" category="2" priority="24" show="1"/>
+  <key id="26" name="对怪增伤" type="2" category="2" priority="25" show="1"/>
+  <key id="27" name="杀怪经验" type="2" category="2" priority="26" show="1"/>
+  <key id="28" name="体力值回复" type="2" category="2" priority="27" show="0"/>
+  <key id="29" name="物品爆率" type="2" category="2" priority="28" show="0"/>
+  <key id="30" name="对人减伤" type="1" category="2" priority="29" show="1"/>
+  <key id="31" name="对怪减伤" type="1" category="2" priority="30" show="1"/>
+  <key id="32" name="对人减伤" type="2" category="2" priority="31" show="1"/>
+  <key id="33" name="对怪减伤" type="2" category="2" priority="32" show="1"/>
+  <key id="34" name="最终减伤" type="1" category="2" priority="33" show="1"/>
+  <key id="35" name="最终减伤" type="2" category="2" priority="34" show="1"/>
+  <key id="36" name="对人增伤" type="1" category="2" priority="35" show="1"/>
+  <key id="37" name="对怪增伤" type="1" category="2" priority="36" show="1"/>
+  <key id="38" name="最终增伤" type="1" category="2" priority="37" show="1"/>
+  <key id="39" name="最终增伤" type="2" category="2" priority="38" show="1"/>
+  <key id="40" name="吸血" type="2" category="2" priority="39" show="1"/>
+  <key id="53" name="击晕值" type="1" category="2" priority="40" show="1"/>
+  <key id="54" name="抗晕值" type="1" category="2" priority="41" show="1"/>
+  <key id="55" name="上毒值" type="1" category="2" priority="42" show="1"/>
+  <key id="56" name="毒抗值" type="1" category="2" priority="43" show="1"/>
+  <key id="101" name="金元素强化" type="1" category="2" priority="44" show="1"/>
+  <key id="102" name="木元素强化" type="1" category="2" priority="45" show="1"/>
+  <key id="103" name="水元素强化" type="1" category="2" priority="46" show="1"/>
+  <key id="104" name="火元素强化" type="1" category="2" priority="47" show="1"/>
+  <key id="105" name="土元素强化" type="1" category="2" priority="48" show="1"/>
+  <key id="106" name="金元素抗性" type="1" category="2" priority="49" show="1"/>
+  <key id="107" name="木元素抗性" type="1" category="2" priority="50" show="1"/>
+  <key id="108" name="水元素抗性" type="1" category="2" priority="51" show="1"/>
+  <key id="109" name="火元素抗性" type="1" category="2" priority="52" show="1"/>
+  <key id="110" name="土元素抗性" type="1" category="2" priority="53" show="1"/>
+
+</RolePanel>
+
+<EquipDisplay><!-- 用来配置道具表中属性所对应的中文显示内容-->
+
+  <key id="1" word="Phyatk" name="物理攻击" />
+  <key id="2" word="Magatk" name="魔法攻击" />
+  <key id="4" word="Phydef" name="物理防御" />
+  <key id="5" word="Magdef" name="魔法防御" />
+  <key id="12" word="HP" name="生命值" />
+  <key id="7" word="Hit" name="命中值" />
+  <key id="6" word="Miss" name="闪避值" />
+  <key id="8" word="Crit" name="暴击值" />
+  <key id="9" word="Decrit" name="韧性值" />
+  <key id="36" word="PVPdamage" name="对人增伤" />
+  <key id="37" word="PVEdamage" name="对怪增伤" />
+  <key id="15" word="HPPercent" name="生命百分比" />
+
+</EquipDisplay>
+
+<Treasurebox><!-- 用来配置百宝箱中的物品抽取几率-->
+
+  <key  id="50" rate="0.1%" />
+  <key  id="49" rate="0.3%" />
+  <key  id="48" rate="0.5%" />
+  <key  id="47" rate="1%" />
+  <key  id="46" rate="3%" />
+  <key  id="45" rate="6%" />
+  <key  id="76" rate="25%" />
+  <key  id="24" rate="8%" />
+  <key  id="37" rate="10%" />
+  <key  id="61" rate="24%" />
+  <key  id="62" rate="10%" />
+  <key  id="63" rate="10%" />
+  <key  id="64" rate="9%" />
+  <key  id="65" rate="8%" />
+  <key  id="66" rate="7.7%" />
+  <key  id="67" rate="7.3%" />
+  <key  id="68" rate="7%" />
+  <key  id="69" rate="6.5%" />
+  <key  id="70" rate="6%" />
+
+
+</Treasurebox>
+
+<PVP><!-- 用来配置即时pk玩法活动相关的配置内容-->
+
+  <match singlePVP="1" securitytime="3"/><!-- 用来配置单人匹配还需要匹配的人数以及连续失败多少次匹配机器人-->
+  <dailyset dailytime="10" storeid="13001" /><!-- 用来配置1v1玩法中每天默认挑战次数，商城表中的购买ID-->
+  <timeset matchtime="10" waittime="3" duration="300" /><!-- 用来配置玩法中匹配时间（秒），开始挑战等待时间（秒），挑战持续时间（秒）-->
+  <levelset levellimit="5"/><!-- 用来配置玩法中匹配玩家之间的最大等级差-->
+  <settlement dailybegin="00:00:00" dailyend="23:59:00" time="23:59:59" weekmark="1" weekawardtime="00:00:00"/><!-- 用来配置每日活动开启时间、结束时间和每日榜单结算奖励\每周重置的日期、每周奖励发放的时间-->
+  <lamp time="10"/><!-- 用来配置乱斗玩法中连胜多少次会出走马灯公告-->
+  <score victory="35" lose="15"/><!-- 用来配置PK玩法中胜一场给多少积分；败一场给多少积分-->
+
+</PVP>
+
+<GVG><!-- 用来配置回合制玩法活动相关的配置内容-->
+
+  <match multiplePVP="6" /><!-- 用来配置多人匹配还需要匹配的人数-->
+  <dailyset dailytime="10" storeid="13002" /><!-- 用来配置1v1玩法中每天默认挑战次数，商城表中的购买ID-->
+  <timeset matchtime="10" waittime="3" duration="600" /><!-- 用来配置玩法中匹配时间（秒），开始挑战等待时间（秒），挑战持续时间（秒）-->
+  <levelset levellimit="5"/><!-- 用来配置玩法中匹配玩家之间的最大等级差-->
+  <settlement dailybegin="00:00:00" dailyend="23:59:00" time="23:59:59" weekmark="1" weekawardtime="00:00:00"/><!-- 用来配置每日活动开启时间、结束时间和每日榜单结算奖励\每周重置的日期、每周奖励发放的时间-->
+  <buffgap refreshtime="30"  /><!-- 用来配置buff的刷新时间间隔，单位秒-->
+  <relive alivetime="10" protecttime="3" /><!-- 用来配置死亡复活的时间和无敌时间，单位秒-->
+  <Maxround num="15" /><!-- 用来配置单场战斗的最大回合数-->
+  
+  <buffgenerate><!-- 用来配置buff的刷新坐标-->
+    <key x="20" y="20"/>
+    <key x="40" y="40" />
+    <key x="60" y="60" />
+    <key x="80" y="80" />
+  </buffgenerate>  
+
+  <buff><!-- 用来配置buff的id-->
+    <key id="20" />
+    <key id="21" />
+    <key id="22" />
+    <key id="23" />
+  </buff> 
+
+  <reward><!-- 用来配置回合赛奖励结算，mark如果为1，则代表需要乘上当前角色等级；反之则不用乘-->
+    <win>
+      <key id="2" num="200" mark="1" />
+      <key id="4" num="30"  mark="0" />
+      <key id="1" num="2000" mark="1"/>
+    </win>  
+    <lose>
+      <key id="2" num="60" mark="1" />
+      <key id="4" num="10"  mark="0" />
+      <key id="1" num="600" mark="1" />
+    </lose> 
+  </reward>
+
+
+    <pvpscore><!-- 用来配置不同挑战情况下的己方加减积分情况，id为正代表挑战比自身积分高的对手，反之比自身低/对手的增减分始终和我的增减分相同-->
+
+        <item id="301" win="15" lose="4"/>
+        <item id="201" win="13" lose="5"/>
+        <item id="101" win="10" lose="6"/>
+        <item id="0" win="7" lose="7"/>
+        <item id="-101" win="6" lose="4"/>
+        <item id="-201" win="5" lose="5"/>
+        <item id="-301" win="4" lose="6"/>
+    </pvpscore>
+
+
+</GVG>
+
+<PVPreward><!-- 用来配置1vs1奖励结算，mark如果为1，则代表需要乘上当前角色等级；反之则不用乘-->
+
+  <win>
+    <key id="2" num="200" mark="1" />
+    <key id="4" num="30"  mark="0" />
+    <key id="1" num="2000" mark="1"/>
+  </win>  
+  <lose>
+    <key id="2" num="60" mark="1" />
+    <key id="4" num="10"  mark="0" />
+    <key id="1" num="600" mark="1" />
+  </lose> 
+
+</PVPreward>
+
+<PVPseason><!-- 用来配置1对1pk玩法赛季的持续时间-->
+
+  <season id="1" starttime="2025-01-01" endtime="2025-03-31" />
+  <season id="2" starttime="2025-04-01" endtime="2025-06-30" />
+  <season id="3" starttime="2025-07-01" endtime="2025-09-30" />
+  <season id="4" starttime="2024-10-01" endtime="2025-12-31" />
+
+</PVPseason>
+
+<Equipenhance><!-- 用来配置装备强化的数值品质系数-->
+
+  <quality ID="1" value="1" />
+  <quality ID="2" value="1.25" />
+  <quality ID="3" value="1.55" />
+  <quality ID="4" value="1.95" />
+  <quality ID="5" value="2.5" />
+  <quality ID="6" value="3.2" />
+  <quality ID="7" value="4" />
+  <quality ID="8" value="5" />
+
+</Equipenhance>
+
+<Rifinerandom><!-- 用来配置不同品质装备随机洗炼需要消耗的物品和数量-->
+
+  <quality ID="1" itemid="1" itemnum="10000" />
+  <quality ID="2" itemid="1" itemnum="12500" />
+  <quality ID="3" itemid="1" itemnum="15500" />
+  <quality ID="4" itemid="1" itemnum="19500" />
+  <quality ID="5" itemid="1" itemnum="25000" />
+  <quality ID="6" itemid="1" itemnum="32000" />
+  <quality ID="7" itemid="1" itemnum="50000" />
+
+</Rifinerandom>
+
+<Rifinedirect><!-- 用来配置不同品质装备随机洗炼需要消耗的物品和数量-->
+
+  <quality ID="1" itemid="5" itemnum="10" />
+  <quality ID="2" itemid="5" itemnum="12" />
+  <quality ID="3" itemid="5" itemnum="15" />
+  <quality ID="4" itemid="5" itemnum="19" />
+  <quality ID="5" itemid="5" itemnum="25" />
+  <quality ID="6" itemid="5" itemnum="32" />
+  <quality ID="7" itemid="5" itemnum="50" />
+
+</Rifinedirect>
+
+<starstone><!-- 用来配置星级直升宝石所对应的星级,slot填0则代表不指定槽位，否则填对应槽位的ID-->
+
+  <starlevel ID="44" level="3" slot="0"/>
+  <starlevel ID="45" level="5" slot="0"/>
+  <starlevel ID="46" level="7" slot="0"/>
+  <starlevel ID="47" level="9" slot="0"/>
+  <starlevel ID="48" level="11" slot="0"/>
+  <starlevel ID="49" level="13" slot="0"/>
+  <starlevel ID="50" level="15" slot="0"/>
+
+</starstone>
+
+<switch><!-- 用来配置功能的开启等级，没有设定的功能则默认进入游戏即为开启，通用的提示语为：功能XX级开启！  severday  =0  openday为用户注册时间；   =1 openday为服务器开服时间-->
+
+  <module ID="1" name="开箱玩法（宝箱开启+宝箱升级+宝箱设置）" openlevel="1" openday="1" isshow="0" minBattel="9" image="zhufu" severday="0"/>
+  <module ID="2" name="任务模块（主线+日常+周常+成就+福利）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="3" name="每日签到" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="4" name="活动中心（七日连登+30日累登+等级奖励+折扣礼包）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="5" name="首充功能" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="6" name="特权卡功能" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="7" name="VIP功能" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="8" name="系统功能（设置+邮件+激活码）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="9" name="角色模块-主角（装备+技能）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="10" name="包裹模块" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="11" name="商城模块（充值商城+元宝商城+金币商城）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="12" name="聊天模块" openlevel="1" isshow="0" severday="0"/>
+  <module ID="13" name="角色模块-伙伴（召唤+技能），上阵功能跟着VIP等级走" openlevel="10" openday="1" isshow="0" severday="0"/>
+  <module ID="14" name="经验池功能（主角+伙伴升级）" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="15" name="玩法模块-战役" openlevel="1" minBattel="21" image="zhanyi" severday="0"/>
+  <module ID="16" name="伙伴升星" openlevel="10" openday="1" isshow="0" severday="0"/>
+  <module ID="17" name="玩法模块-首领" openlevel="1" openday="1" minBattel="69"  image="shouling" severday="0"/>
+  <module ID="18" name="商城模块（试炼商城）" openlevel="1" openday="1"  minBattel="81" isshow="0" severday="0"/>
+  <module ID="19" name="玩法模块-试炼塔" openlevel="1" openday="1" minBattel="81" image="shilian" severday="0"/>
+  <module ID="20" name="战宠模块（抽取+合成+突破）" openlevel="1" openday="3" minBattel="0"  image="chongwu" isshow="1" describe="宠物：2个同品质宠物拖动合成即可获取更高品质的珍稀宠物！" severday="0"/>
+  <module ID="21" name="玩法模块-遗迹" openlevel="1" openday="1" minBattel="45"  image="yiji" severday="0"/>
+  <module ID="22" name="商城模块（战魂商城）" openlevel="1" openday="1" minBattel="61" isshow="0" severday="0"/>
+  <module ID="23" name="玩法模块-即时PK" openlevel="1" openday="1" minBattel="61"  image="jspk" severday="1"/>
+  <module ID="24" name="玩法模块-回合PK" openlevel="40" openday="5"  minBattel="61" isshow="1" describe="回合挑战赛：随心搭配最强阵容，你来我往争霸赛场！" image="hhpk" severday="1"/>
+  <module ID="25" name="玩法模块-副本-强化石副本" openlevel="40" openday="3" minBattel="0" image="rcfb" severday="0"/>  <!-- 金币副本拆出来-->
+  <module ID="26" name="打造模块-装备强化" openlevel="0" openday="0" isshow="0" minBattel="13" describe="槽位强化：强化属性绑定装备槽位，无须担心换装失效问题。" image="qianghua" severday="0"/>
+  <module ID="27" name="玩法模块-副本-升星石副本" openlevel="40" openday="3" minBattel="0" image="shengxing" severday="0"/> <!-- 经验副本拆出来-->
+  <module ID="28" name="打造模块-装备升星" openlevel="1" openday="3"  minBattel="0" isshow="1" describe="槽位升星：升星属性绑定装备槽位，无须担心换装失效问题。" severday="0"/>
+  <module ID="29" name="玩法模块-副本-书页副本" openlevel="40" openday="4" minBattel="0" severday="0"/>
+  <module ID="30" name="打造模块-技能升级" openlevel="1" openday="1" isshow="0" severday="0"/>
+  <module ID="31" name="玩法模块-副本-魂石副本" openlevel="40" openday="4" minBattel="0" severday="0"/>
+  <module ID="32" name="打造模块-魂石" openlevel="1" openday="4" minBattel="0" isshow="1" describe="宝石镶嵌：宝石镶嵌在装备槽位上，通过合成可以几率获得自然属性宝石。" image="xiangqian" severday="0"/>
+  <module ID="33" name="行会模块（家族升级+家族技能+家族副本+家族商店）" openlevel="1" openday="1" minBattel="49" severday="0"/>
+  <module ID="34" name="打造模块-技能进阶" openlevel="1" openday="1" isshow="1" describe="技能进阶：技能进阶需要满足一定技能升级条件，进阶可大幅提升战力。" severday="0"/>
+  <module ID="35" name="挂机副本-守卫海岛" openlevel="50" openday="6"  minBattel="0" isshow="1" describe="挂机升级：轻松挂机即可几率获得珍品伙伴碎片。" image="gjfb" severday="1"/>
+  <module ID="36" name="世界boss" openlevel="40" openday="2" minBattel="0" isshow="1" describe="世界BOSS：每天5次，伤害越高奖励越高。" image="sjboss" severday="1"/>
+  <module ID="37" name="一战到底" openlevel="40" openday="2" minBattel="0" isshow="1" describe="一战到底：首次通关可以获取挑战奖励，通关耗时越少，排名奖励越高。" image="yzdd" severday="1"/>
+  <module ID="38" name="五行试炼" openlevel="40" openday="5"  minBattel="0" isshow="1" describe="五行试炼：首次通关可以获取挑战奖励，元素相克，变化无穷。" image="wuxing" severday="0"/>
+  <module ID="39" name="群雄战场" openlevel="40" openday="10"  minBattel="0" isshow="1" describe="群雄战场：超大战场地图肆意PK，海量掉落物品强者可得。" image="zhanchang" severday="1"/>
+  <module ID="40" name="角色模块-称号" openlevel="40" openday="10"  minBattel="0" isshow="1" describe="称号系统：炫酷称号应有尽有，战力个性可兼得。" image="chenghao" severday="1"/>
+  <module ID="41" name="聊天功能" openlevel="1" openday="1" isshow="0" minBattel="53" describe="聊天功能：畅聊无限。" severday="0"/>
+  <module ID="42" name="双倍速功能" openlevel="60" openday="1" isshow="0"  severday="0"/>
+  <module ID="43" name="主界面自动战斗" openlevel="10" openday="1" isshow="0"  severday="0"/>
+  <module ID="44" name="星愿抽卡" openlevel="1" openday="1" minBattel="29"  image="zhaohuan" severday="0"/>
+  <module ID="45" name="头像-头像框" openlevel="150" openday="1" isshow="0"  severday="0"/>
+  <module ID="46" name="槽位洗炼" openlevel="1"  minBattel="17" image="xilian" severday="0"/>
+  <module ID="47" name="经验副本" openlevel="40" openday="4" minBattel="0" severday="0"/>
+  <module ID="48" name="金币副本" openlevel="40" openday="4" minBattel="0" severday="0"/>
+  
+</switch>
+
+<skillslot><!-- 用来配置技能槽位的解锁等级-->
+
+  <slot ID="1" openlevel="1"/>
+  <slot ID="2" openlevel="2"/>
+  <slot ID="3" openlevel="3"/>
+  <slot ID="4" openlevel="4"/>
+  <slot ID="5" openlevel="5"/>
+  <slot ID="6" openlevel="6"/>
+  <slot ID="7" openlevel="7"/>
+  <slot ID="8" openlevel="8"/>
+  <slot ID="9" openlevel="9"/>
+  <slot ID="10" openlevel="10"/>
+  <slot ID="11" openlevel="11"/>
+  <slot ID="12" openlevel="12"/>
+  <slot ID="0" openlevel="40"/>
+
+</skillslot>
+
+<bounty><!-- 用来配置悬赏功能的档次几率划分-->
+
+  <grade ID="12002" weight="2000"/>
+  <grade ID="12003" weight="2000"/>
+  <grade ID="12004" weight="1500"/>
+  <grade ID="12005" weight="1500"/>
+  <grade ID="12006" weight="1500"/>
+  <grade ID="12007" weight="1500"/>
+
+</bounty>
+
+<fate><!-- 用来配置命格功能的道具使用以及几率配置-->
+
+  <basevalue><!-- 用来配置材料的基础增加数值--> 
+    <item id="72" num="10" />
+    <item id="73" num="40" />
+    <item id="74" num="150" />
+    <item id="75" num="500" />
+  </basevalue> 
+  <rate><!-- 用来配置通用的暴击几率，“rate”代表倍率；“pro”代表万分比的分子--> 
+    <stage rate="1" Pro="7000" />
+    <stage rate="2" Pro="2000" />
+    <stage rate="3" Pro="1000" />
+  </rate>   
+
+</fate>
+
+<worldBoss><!-- 用来配置世界boss的相关数据-->
+
+  <set weekset="2" starttime="9:00:00" endtime="20:55:00"/><!-- 用来配置世界boss的每周时间和当天的起止时间-->
+  <blood num="100"/><!-- 用来配置世界boss的血条数量-->
+  <entertime num="5"/><!-- 用来配置世界boss每天的挑战次数-->
+  <challengetime value="60"/><!-- 用来配置世界boss每次的挑战时间，单位：秒-->
+  <bossdescribe des="每隔10秒发动全屏技能，对目标造成大量伤害的同时会有几率使得目标处于3秒的眩晕状态。"/><!-- 用来配置世界boss的描述文字-->
+  <accommodation num="10"/><!-- 用来配置世界boss的属性成长间隔参数-->
+  <opentime><!-- 用来配置世界boss的刷新顺序-->
+    <turn>500</turn>
+    <turn>501</turn>
+    <turn>502</turn>
+    <turn>503</turn>
+    <turn>504</turn>
+  </opentime>
+
+</worldBoss>
+
+<fightend><!-- 用来配置一战到底的相关数据-->
+
+  <set weekset="4" starttime="9:00:00" endtime="20:55:00"/><!-- 用来配置副本的每周时间和当天的起止时间-->
+
+</fightend>
+
+<Diamond><!-- 用来配置宝石的相关内容-->
+
+  <position><!-- 用来配置宝石不同槽位的描述文字，id为装备槽位--> 
+    <pos id="1" des="该槽位只能镶嵌红色魂石" />
+    <pos id="2" des="该槽位只能镶嵌蓝色魂石" />
+    <pos id="3" des="该槽位只能镶嵌绿色魂石" />
+    <pos id="4" des="该槽位只能镶嵌黄色魂石" />
+    <pos id="5" des="该槽位只能镶嵌红色魂石" />
+    <pos id="6" des="该槽位只能镶嵌红色魂石" />
+    <pos id="7" des="该槽位只能镶嵌黄色魂石" />
+    <pos id="8" des="该槽位只能镶嵌黄色魂石" />
+    <pos id="9" des="该槽位只能镶嵌蓝色魂石" />
+    <pos id="10" des="该槽位只能镶嵌绿色魂石" />
+    <pos id="11" des="该槽位只能镶嵌蓝色魂石" />
+    <pos id="12" des="该槽位只能镶嵌绿色魂石" />
+  </position> 
+  <openlevel><!-- 用来配置宝石槽位的开启等级--> 
+    <stage num="1" level="40" />
+    <stage num="2" level="45" />
+    <stage num="3" level="50" />
+    <stage num="4" level="60" /> 
+  </openlevel>  
+  <master><!-- 用来配置魂石大师激活所需槽位--> 
+    <stage id="3003" num="10" />
+    <stage id="3005" num="12" />
+    <stage id="3007" num="14" />
+    <stage id="3009" num="16" />
+    <stage id="3010" num="20" />
+    <stage id="3011" num="24" />
+    <stage id="3012" num="28" />
+    <stage id="3013" num="32" />
+    <stage id="3014" num="36" />
+    <stage id="3015" num="40" />
+  </master>     
+
+</Diamond>
+
+<dailymap><!-- 用来配置每日必做的相关数据-->
+
+  <goldmap><!-- 用来配置金币副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="3"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级--> 
+    <basevalue id="1" num="300000" /><!-- 用来配置基础结算数量--> 
+    <score><!-- 用来配置评分--> 
+      <stage key="D" value="0" />
+      <stage key="C" value="1000" />
+      <stage key="B" value="2500" />
+      <stage key="A" value="5000" />
+      <stage key="S" value="8000" />
+      <stage key="SS" value="9000" />
+      <stage key="SSS" value="9500" />
+    </score> 
+    <quickaccess score="9500"/><!-- 用来配置扫荡的结算系数--> 
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量-->   
+    <accommodation num="30"/><!-- 用来配置怪物的属性成长参数-->
+    <buffgap refreshtime="20"  /><!-- 用来配置buff的刷新时间间隔，单位秒-->
+
+    <buffgenerate><!-- 用来配置buff的刷新坐标-->
+      <key x="13" y="25"/>
+      <key x="5" y="17" />
+      <key x="30" y="17" />
+    </buffgenerate>  
+
+    <buff><!-- 用来配置buff的id-->
+      <key id="20" />
+    </buff> 
+
+  </goldmap>
+
+  <expmap><!-- 用来配置经验副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="3"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级-->
+    <basevalue id="2" num="200000" /><!-- 用来配置基础结算数量--> 
+    <score><!-- 用来配置评分-->
+      <stage key="D" value="0" />
+      <stage key="C" value="1000" />
+      <stage key="B" value="2500" />
+      <stage key="A" value="5000" />
+      <stage key="S" value="8000" />
+      <stage key="SS" value="9000" />
+      <stage key="SSS" value="9500" />
+    </score> 
+    <quickaccess score="9500"/><!-- 用来配置扫荡的结算系数--> 
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量-->  
+    <accommodation num="30"/><!-- 用来配置怪物的属性成长参数-->
+    <buffgap refreshtime="20"  /><!-- 用来配置buff的刷新时间间隔，单位秒--> 
+
+    <buffgenerate><!-- 用来配置buff的刷新坐标-->
+      <key x="13" y="25"/>
+      <key x="5" y="17" />
+      <key x="30" y="17" />
+    </buffgenerate>  
+
+    <buff><!-- 用来配置buff的id-->
+      <key id="20" />
+    </buff>  
+  </expmap>   
+
+  <strengthenstonemap><!-- 用来配置强化石副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="4"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级-->
+    <basevalue  id="21" num="10" /><!-- 用来配置基础结算数量--> 
+    <totlecycle num="6" /><!-- 用来配置总刷怪波次--> 
+    <quickaccess score="5"/><!-- 用来配置扫荡的结算波次--> 
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量-->  
+    <accommodation num="30"/><!-- 用来配置怪物的属性成长参数--> 
+  </strengthenstonemap>
+
+  <skillpagemap><!-- 用来配置书页副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="4"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级-->
+    <basevalue  id="23" num="1" /><!-- 用来配置基础结算数量--> 
+    <totlecycle num="1" /><!-- 用来配置总刷怪波次--> 
+    <quickaccess score="1"/><!-- 用来配置扫荡的结算波次--> 
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量-->  
+    <accommodation num="30"/><!-- 用来配置怪物的属性成长参数--> 
+  </skillpagemap>
+
+  <starstonemap><!-- 用来配置升星石副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="5"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级-->
+    <quickaccess><!-- 用来配置扫荡的结算宝箱--> 
+      <stage id="602" num="1" />
+      <stage id="603" num="2" />
+      <stage id="604" num="4" />
+    </quickaccess>
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量--> 
+  </starstonemap>
+
+  <soulstonemap><!-- 用来配置魂石副本的相关内容--> 
+    <challengetime  num="1" time="180" viplimit="5"/><!-- 用来配置每日可挑战次数和副本持续时间以及可以扫荡的vip等级-->
+    <quickaccess><!-- 用来配置扫荡的结算宝箱--> 
+      <stage id="605" num="1" />
+      <stage id="606" num="2" />
+      <stage id="607" num="4" />
+    </quickaccess> 
+    <doubleaccess id="5" num="2000"/><!-- 用来配置双倍所需点券数量--> 
+  </soulstonemap>
+
+</dailymap>
+
+<Guild><!-- 用来配置行会相关的配置内容-->
+
+  <match guildnum="10" applicantnum="15" /><!-- 用来配置申请加入行会的列表最多显示行会数量以及行会审核入会人员列表最多显示的角色数量-->
+  <wishvalue refreshtime="30" maxvalue="30" getitemnum="5" getskillexp="1"/><!-- 用来配置祈愿点每隔X分钟恢复1点、每天最多累积X点、1点祈愿值对应多少行会贡献、1点祈愿值对应多少技能经验-->
+  <creatcost itemid="5" neednum="2000" /><!-- 用来配置创建行会消耗的道具id和数量-->
+  <interlimit time="24" /><!-- 用来配置重新进入行会的冷却时间，单位小时-->
+  <golddonate needitemid="1" needitemnum="200000" getitemnum="10" getguildexp="10" getguildexpid="3"/><!-- 用来配置金币捐献消耗的道具ID、数量、获得行会贡献的数量、提供行会经验的数量、行会贡献的数值道具ID-->
+  <moneydonate needitemid="5" needitemnum="20" getitemnum="30" getguildexp="30" getguildexpid="3"/><!-- 用来配置点券捐献消耗的道具ID、数量、获得行会贡献的数量、提供行会经验的数量、行会贡献的数值道具ID-->
+  <donatelimit dailytime="5" /><!-- 用来配置捐献的每日次数-->
+  <guildboss maxnum="10" /><!-- 用来配置行会boss最多刷几波-->
+  <guildcopy starttime="20:00:00" endtime="20:15:00" lasttime="15"/>  <!-- 用来配置行会副本的起止时间以及活动持续时间（分钟）-->
+</Guild>
+
+<openslot><!-- 用来配置伙伴槽位激活所需主角等级--> 
+    <stage id="1" needlevel="1" openday="1" minBattel="21" severday="0"/>
+    <stage id="2" needlevel="1" openday="1" minBattel="25" severday="0"/>
+    <stage id="3" needlevel="1" openday="1" minBattel="37" severday="0"/>
+    <stage id="4" needlevel="1" openday="2" minBattel="0" severday="0"/>
+</openslot> 
+
+<partener><!-- 用来配置伙伴重铸和分解的相关内容-->
+
+  <forge><!-- 用来配置伙伴重铸的免费和付费折损和消耗--> 
+    <free rate="70" />
+    <charge quality="2" id="5" num="5"/>
+    <charge quality="3" id="5" num="10"/>
+    <charge quality="4" id="5" num="20"/>
+    <charge quality="6" id="5" num="50"/>
+    <charge quality="7" id="5" num="80"/>
+    <charge quality="8" id="5" num="100"/>
+  </forge> 
+  <exp><!-- 用来配置经验珠的ID和使用可获得经验--> 
+    <range id="94" num="1500"/>
+    <range id="30" num="10000"/>
+    <range id="31" num="50000"/>
+    <range id="32" num="100000"/>
+    <range id="33" num="500000"/>
+    <range id="34" num="1000000"/>
+  </exp> 
+  <decompose><!-- 用来配置伙伴分解的产出--> 
+    <stage quality="7" starlevel="5" rate="50" id="95"/>
+  </decompose>    
+
+</partener> 
+<GuardIsland> <!-- 守卫海岛（挂机副本）挂机倍率 type 1免费；2广告；3物品；4充值; multiplier 为万分比；OrderNum为序号-->
+    <enter CDtime="60" /><!-- 用来配置从挂机副本中退出之后再次进入的冷却时间，单位：秒-->
+	<Quick><!-- 用来配置刷怪效率，单位：秒--><!-- 用来配置刷怪经验与金币效率，单位：秒-->
+			<range minlevel="50"  maxlevel="60" battle="4" Expbattle="0.7"/>
+			<range minlevel="61"  maxlevel="70" battle="4" Expbattle="0.7"/>
+			<range minlevel="71"  maxlevel="80" battle="4" Expbattle="0.7"/>
+			<range minlevel="81"  maxlevel="90" battle="4" Expbattle="0.7"/>
+			<range minlevel="91"  maxlevel="100" battle="4" Expbattle="0.7"/>
+			<range minlevel="101"  maxlevel="120" battle="4" Expbattle="0.4"/>
+			<range minlevel="121"  maxlevel="130" battle="4" Expbattle="0.3"/>
+			<range minlevel="131"  maxlevel="140" battle="4" Expbattle="0.3"/>
+			<range minlevel="141"  maxlevel="145" battle="4" Expbattle="0.3"/>
+			<range minlevel="146"  maxlevel="150" battle="4" Expbattle="0.3"/>
+		</Quick>
+	    <record>
+      <rate id="0" type="1" OrderNum="1"  multiplier="0" describe="免费挂机" />
+      <rate id="26001" type="2" OrderNum="2" multiplier="5000"
+        describe="观看广告获得1.5倍收益" />
+      <rate id="26002" type="3" OrderNum="3" multiplier="10000"
+        describe="消耗元宝获得2倍收益" />
+      <rate id="26003" type="3" OrderNum="4" multiplier="20000"
+        describe="消耗元宝获得3倍收益" />
+      <rate id="26004" type="4" OrderNum="5" multiplier="40000"
+        describe="直接充值获得5倍收益" />
+    </record>
+</GuardIsland>
+
+<Element><!-- 用来配置五行副本相关的配置内容-->
+
+  <battle constant="1" restraintratio="5" /><!-- 用来配置元素攻防计算时的常量，以及克制额外增伤的百分比分子-->
+  <mainelement AttributeID="104" /><!-- 用来配置初始状态下的主属性元素ID-->
+  <daily inittime="10" needitem="28001"/><!-- 用来配置每日默认挑战次数，购买所需道具ID-->
+  <fresh day="1" /><!-- 用来配置每周一0点重置-->
+  <rank maxnum="100" /><!-- 用来配置闯关排行榜最多排名人数-->
+  <enterlimit starttime="00:00:00" endtime="23:59:59" lasttime="1440"/>  <!-- 用来配置五行副本的起止时间以及活动持续时间（分钟）-->
+  <maxnum copynum="80"/>  <!-- 用来配置五行副本的最多关卡数量-->
+
+</Element>
+
+<War><!-- 用来配置战场相关的配置内容-->
+
+  <enterlimit maxnum="30" copynum="8" bornrange="10" /><!-- 用来配置单个地图最多可进入的角色上限，每个战区的副本数量，以及安全区的范围-->
+  <titlestar maxnum="10"/><!-- 用来配置称号的最大可升星数量-->
+  <opentime>
+   <time starttime="13:00:00" endtime="15:00:00" lasttime="120" />  <!-- 用来配置战场副本的起止时间以及活动持续时间（分钟）-->
+   <time starttime="19:00:00" endtime="21:00:00" lasttime="120" />  <!-- 用来配置战场副本的起止时间以及活动持续时间（分钟）-->
+  </opentime>
+  <openday><!-- 用来配置战场每周开启的日期，对应周六、周日-->
+    <day>6</day>
+    <day>0</day>
+  </openday>  
+  <protect safytime="120"/>  <!-- 用来配置战场掉落物品失去归属的最长时间，单位秒-->
+  <autorevive time="10"/>  <!-- 用来配置死亡之后多久没有复活则自动复活的时间，单位秒-->
+  <revive><!-- 用来配置原地复活的次数和对应消耗，超过10次的则统一按照10次的消耗来计算--> 
+    <order id="1" needitem="5" num="10"/>
+    <order id="2" needitem="5" num="20"/>
+    <order id="3" needitem="5" num="30"/>
+    <order id="4" needitem="5" num="40"/>
+    <order id="5" needitem="5" num="50"/>
+    <order id="6" needitem="5" num="100"/>
+    <order id="7" needitem="5" num="200"/>
+    <order id="8" needitem="5" num="300"/>
+    <order id="9" needitem="5" num="400"/>
+    <order id="10" needitem="5" num="500"/>
+  </revive> 
+  <PK killperson="30" daylimit="30000"/>  <!-- 用来配置战场每击杀一个主角增加多少战魂；每天最多在战场地图中可以获得多少战魂-->
+  <notice><!-- 用来配置连斩公告提示，击杀主角才进行连斩的计数--> 
+    <time id="1" num="10"/>
+    <time id="2" num="20"/>
+    <time id="3" num="50"/>
+    <time id="4" num="100"/>
+  </notice>
+  <luckticket><!-- 用来配置称号星级幸运符的几率配置，该几率为直接增加的几率，不用乘--> 
+    <item id="25067" num="200"/>
+    <item id="25068" num="700"/>
+    <item id="25069" num="2500"/>
+    <item id="25070" num="8000"/>
+    <item id="25071" num="10000"/>
+  </luckticket>
+  <monstergrow><!-- 用来配置战场特定怪物死亡之后属性成长的系数，id为怪物ID，num为每次死亡都要增加的基础属性百分比加成的万分比分子,maxtime为最多成长的次数--> 
+    <monster id="3085" num="2000" maxtime="10"/>
+    <monster id="3086" num="1000" maxtime="10"/>
+    <monster id="3087" num="1000" maxtime="10"/>
+    <monster id="3088" num="1000" maxtime="10"/>
+  </monstergrow>  
+</War>
+  <firstgacha  id="10" num="1"/><!--旧版本，新手引导首次十连银色的钥匙抽卡必出--> 
+
+  <gacha >
+	<gachaLuckly maxnum="100" /><!--幸运值上限--> 
+	<guidneed id="0"/> 
+	 <intMustOut bagid="100002"  id="59" num="1"/><!--默认必出包ID、指定消耗道具ID、值-->
+	 <refreshGacha useType="5" num="300"  luck="1"/><!--新抽卡刷新消耗类型，数量，增加幸运值-->   
+	 <output>
+		<select id="0" useType="0" num="0"  luck="1"/>  <!--每日一次的免费抽取-->
+		<select id="1" useType="5" num="2000"  luck="1"/><!--第一次抽卡，花费类型，花费数量，增加幸运值-->
+		<select id="2" useType="58" num="18"  luck="1"/>
+		<select id="3" useType="58" num="36"  luck="1"/>
+		<select id="4" useType="58" num="66"  luck="1"/>
+	</output>
+  </gacha>
+
+  <LimitRanking><!-- 用来配置限时榜单的持续时间，ID为榜单的ID，value为持续时间/天-->
+
+      <key id="29" value="3" name="战役通关榜"/>
+      <key id="30" value="4" name="主线通关榜"/>
+
+  </LimitRanking>
+
+  <GearRefining><!-- 用来配置装备洗炼的每个装备槽位的开启和解锁条件，type为1，则代表为等级限制；type为2，则代表为直购，对应的limit则为对应限制条件；type为3，则代表元宝购买-->
+
+      <key slot="1" limit="1" type="1"/>
+      <key slot="2" limit="40" type="1"/>
+      <key slot="3" limit="3000" type="3"/>
+      <key slot="4" limit="5000" type="3"/>
+
+  </GearRefining>
+
+	<mainBattle><!-- 主线战斗怪物掉落装备数量：小怪 掉落2  精英 掉落4~6 BOSS掉落9~11均为每只怪-->
+		<key Flag="0" MinDrop="2" MaxDrop="2"/>
+		<key Flag="1" MinDrop="4" MaxDrop="5"/>
+		<key Flag="2" MinDrop="9" MaxDrop="10"/>
+	</mainBattle>
+	<mainSkill><!-- 主线战斗怪物掉落装备数量：小怪 掉落2  精英 掉落4~6 BOSS掉落9~11均为每只怪-->
+		<key superskillCD="6" /><!-- 特技CD-->
+		<key missskillCD="1"/><!-- 特技失败CD-->
+		<key superskilltime="5"/><!-- 特技显示间隔-->
+		<key superskillatktimes="3"/><!-- 攻击触发次数-->
+	</mainSkill>
+
+<Fatecointrigger><!-- 用来配置命运硬币玩法中，从进入副本开始，第N次触发需要间隔多久，单位秒-->
+
+      <key id="1" time="13" />
+      <key id="2" time="40" />
+
+</Fatecointrigger>
+
+<EpicWeapon><!-- 用来配置神兵升级功能的道具使用以及几率配置-->
+
+
+  <basevalue><!-- 用来配置材料的基础增加数值--> 
+    <item id="90" num="10" />
+  </basevalue> 
+  <rate><!-- 用来配置通用的暴击几率，“rate”代表倍率；“pro”代表万分比的分子--> 
+    <stage rate="1" Pro="7000" />
+    <stage rate="2" Pro="2000" />
+    <stage rate="3" Pro="1000" />
+  </rate>   
+
+</EpicWeapon>
+
+
+
+</Config>

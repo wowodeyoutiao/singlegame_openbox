@@ -1,0 +1,12 @@
+[core]
+log_level = "info" # debug, info, warn, error
+
+[server]
+web_url = "http://127.0.0.1:12307"
+ws_url = "ws://127.0.0.1:7000"
+id = 9
+
+[bot]
+range_start = 1
+range_end = 150
+login_mode = "concurrent"  # 登录模式: "concurrent" 为并发登录, "sequential" 为同步顺序登录

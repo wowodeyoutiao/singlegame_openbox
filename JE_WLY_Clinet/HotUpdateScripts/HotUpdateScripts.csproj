@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{E461BAE8-B218-4AAE-8773-0C18C85110E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HotUpdateScripts</RootNamespace>
+    <AssemblyName>HotUpdateScripts</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Description>JEngine</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assets\HotUpdateResources\Main\Dll\Hidden~</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assets\HotUpdateResources\Main\Dll\Hidden~</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Windows|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assets\HotUpdateResources\Main\Dll\Hidden~</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Windows|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assets\HotUpdateResources\Main\Dll\Hidden~</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Config\CFG_Activity.cs" />
+    <Compile Include="Config\CFG_All.cs" />
+    <Compile Include="Config\CFG_BoxLevel.cs" />
+    <Compile Include="Config\CFG_DropBag.cs" />
+    <Compile Include="Config\CFG_ElementTrials.cs" />
+    <Compile Include="Config\CFG_FateCoin.cs" />
+    <Compile Include="Config\CFG_GuildStore.cs" />
+    <Compile Include="Config\CFG_GuildSkill.cs" />
+    <Compile Include="Config\CFG_GuildEXP.cs" />
+    <Compile Include="Config\CFG_Guidance.cs" />
+    <Compile Include="Config\CFG_Actionset.cs" />
+    <Compile Include="Config\CFG_Element.cs" />
+    <Compile Include="Config\CFG_ItemUse.cs" />
+    <Compile Include="Config\CFG_LimitedActivity.cs" />
+    <Compile Include="Config\CFG_MainBattle.cs" />
+    <Compile Include="Config\CFG_PushingWallMonster.cs" />
+    <Compile Include="Config\CFG_PushingWallPlayer.cs" />
+    <Compile Include="Config\CFG_RoleIcon.cs" />
+    <Compile Include="Config\CFG_PartnerLink.cs" />
+    <Compile Include="Config\CFG_Pet.cs" />
+    <Compile Include="Config\CFG_PetSpeak.cs" />
+    <Compile Include="Config\CFG_RandomDistribV2.cs" />
+    <Compile Include="Config\CFG_RegularDes.cs" />
+    <Compile Include="Config\CFG_EndlessTrials.cs" />
+    <Compile Include="Config\CFG_EquipStrengthen.cs" />
+    <Compile Include="Config\CFG_RankingAward.cs" />
+    <Compile Include="Config\CFG_EquipStar.cs" />
+    <Compile Include="Config\CFG_RandomDistrib.cs" />
+    <Compile Include="Config\CFG_EquipMaster.cs" />
+    <Compile Include="Config\CFG_Monster.cs" />
+    <Compile Include="Config\CFG_Battle.cs" />
+    <Compile Include="Config\CFG_Room.cs" />
+    <Compile Include="Config\CFG_SkillEffect.cs" />
+    <Compile Include="Config\CFG_BuffEffect.cs" />
+    <Compile Include="Config\CFG_Lamp.cs" />
+    <Compile Include="Config\CFG_SkillMainBattle.cs" />
+    <Compile Include="Config\CFG_TitleActivity.cs" />
+    <Compile Include="Config\CFG_TreasureBox.cs" />
+    <Compile Include="Config\CFG_PrizeWheel.cs" />
+    <Compile Include="Config\CFG_Fate.cs" />
+    <Compile Include="Config\CFG_Compose.cs" />
+    <Compile Include="Config\CFG_Partner.cs" />
+    <Compile Include="Config\CFG_Summon.cs" />
+    <Compile Include="Config\CFG_PushingWallSkill.cs" />
+    <Compile Include="Config\CFG_VIP.cs" />
+    <Compile Include="Config\CFG_Task.cs" />
+    <Compile Include="Config\CFG_Privilege.cs" />
+    <Compile Include="Config\CFG_Sign.cs" />
+    <Compile Include="Config\CFG_Title.cs" />
+    <Compile Include="Config\CFG_Skill.cs" />
+    <Compile Include="Config\CFG_Role.cs" />
+    <Compile Include="Config\CFG_Store.cs" />
+    <Compile Include="Config\CFG_Item.cs" />
+    <Compile Include="Config\CFG_XMLConfig.cs" />
+    <Compile Include="Config\CFG_Name.cs" />
+    <Compile Include="Config\CFG_Map.cs" />
+    <Compile Include="GameEvent\GameEvent.cs" />
+    <Compile Include="GameUI\UIActive\UIActive.cs" />
+    <Compile Include="GameUI\UIActive\UIModelActive.cs" />
+    <Compile Include="GameUI\UIActive\UIViewActive.cs" />
+    <Compile Include="GameUI\UIActivityAwards\UIViewActivityAwards.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQForgetPwdCtr.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQBindPhoneCtr.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQNoPwdLoginCtr.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQCertification.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQRegisterCtr.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQLoginCtr.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrController\BQSDKUILogicBase.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\BQSDKMgrHTTPHelper.cs" />
+    <Compile Include="GameUI\UIBQSDKMgr\UIBQSDKMgr.cs" />
+    <Compile Include="GameUI\UIFuncOpenShow\FuncOpenShowLogic\FuncOpenShowWidget.cs" />
+    <Compile Include="GameUI\UIFuncOpenShow\UIFuncOpenShow.cs" />
+    <Compile Include="GameUI\UIFuncOpenShow\UIModelFuncOpenShow.cs" />
+    <Compile Include="GameUI\UIFuncOpenShow\UIViewFuncOpenShow.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\HallEffectInfo.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\Monster\HallBaseMonster.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\Monster\HallMonster.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\Role\HallBaseRole.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\Role\HallRole.cs" />
+    <Compile Include="GameUI\UIHall\HallDropItem.cs" />
+    <Compile Include="GameUI\UIHall\UIHallBg.cs" />
+    <Compile Include="GameUI\UIGameLuckCoin\UIGameLuckCoin.cs" />
+    <Compile Include="GameUI\UIGameLuckCoin\UIModelGameLuckCoin.cs" />
+    <Compile Include="GameUI\UIGameLuckCoin\UIViewGameLuckCoin.cs" />
+    <Compile Include="GameUI\UIHall\UIHallSpecialSKillName.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\CloseItemBoxAndGoBattleAgain.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\GuideStepBase\NewPlayerGuideStepBase.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\GuideStepBase\NewPlayerGuideWidget.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\AddNewRoleInFormation.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\InFirstPlayBattleGuidance.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\GoPlayBattle.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\NewPlayerGuideSteps\GoMainBattle.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\UIModelNewPlayerGuide.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\UINewPlayerGuide.cs" />
+    <Compile Include="GameUI\UINewPlayerGuide\UIViewNewPlayerGuide.cs" />
+    <Compile Include="GameUI\UIPartnerCallAwards\UIPartnerCallAwards.cs" />
+    <Compile Include="GameUI\UIPartnerCallAwards\UIModelPartnerCallAwards.cs" />
+    <Compile Include="GameUI\UIPartnerCallAwards\UIViewPartnerCallAwards.cs" />
+    <Compile Include="GameUI\UIActivityAwards\UIActivityAwards.cs" />
+    <Compile Include="GameUI\UIActivityAwards\UIModelActivityAwards.cs" />
+    <Compile Include="GameUI\UICompetitionEntrance\UICompetitionEntrance.cs" />
+    <Compile Include="GameUI\UICompetitionEntrance\UIModelCompetitionEntrance.cs" />
+    <Compile Include="GameUI\UICompetitionEntrance\UIViewCompetitionEntrance.cs" />
+    <Compile Include="GameUI\UIAutoDelSetting\UIAutoDelSetting.cs" />
+    <Compile Include="GameUI\UIAutoDelSetting\UIModelAutoDelSetting.cs" />
+    <Compile Include="GameUI\UIAutoDelSetting\UIViewAutoDelSetting.cs" />
+    <Compile Include="GameUI\UIBond\UIBond.cs" />
+    <Compile Include="GameUI\UIBond\UIModelBond.cs" />
+    <Compile Include="GameUI\UIBond\UIViewBond.cs" />
+    <Compile Include="GameUI\UIBoxInfoShow\UIBoxInfoShow.cs" />
+    <Compile Include="GameUI\UIBoxInfoShow\UIModelBoxInfoShow.cs" />
+    <Compile Include="GameUI\UIBoxInfoShow\UIViewBoxInfoShow.cs" />
+    <Compile Include="GameUI\UIBoxUpgrade\UIBoxUpgrade.cs" />
+    <Compile Include="GameUI\UIBoxUpgrade\UIModelBoxUpgrade.cs" />
+    <Compile Include="GameUI\UIBoxUpgrade\UIViewBoxUpgrade.cs" />
+    <Compile Include="GameUI\UIBuild\UIBuild.cs" />
+    <Compile Include="GameUI\UIBuild\UIModelBuild.cs" />
+    <Compile Include="GameUI\UIBuild\UIViewBuild.cs" />
+    <Compile Include="GameUI\UICommonItemUse\UICommonItemUse.cs" />
+    <Compile Include="GameUI\UICommonItemUse\UIModelCommonItemUse.cs" />
+    <Compile Include="GameUI\UICommonItemUse\UIViewCommonItemUse.cs" />
+    <Compile Include="GameUI\UIEquipSelect\UIEquipSelect.cs" />
+    <Compile Include="GameUI\UIEquipSelect\UIModelEquipSelect.cs" />
+    <Compile Include="GameUI\UIEquipSelect\UIViewEquipSelect.cs" />
+    <Compile Include="GameUI\UIFightAward\UIFightAward.cs" />
+    <Compile Include="GameUI\UIFightAward\UIModelFightAward.cs" />
+    <Compile Include="GameUI\UIFightAward\UIViewFightAward.cs" />
+    <Compile Include="GameUI\UIFightEndRank\UIFightEndRank.cs" />
+    <Compile Include="GameUI\UIFightEndRank\UIModelFightEndRank.cs" />
+    <Compile Include="GameUI\UIFightEndRank\UIViewFightEndRank.cs" />
+    <Compile Include="GameUI\UIFightFormation\UIFightFormation.cs" />
+    <Compile Include="GameUI\UIFightFormation\UIModelFightFormation.cs" />
+    <Compile Include="GameUI\UIFightFormation\UIViewFightFormation.cs" />
+    <Compile Include="GameUI\UIFightRank\UIFightRank.cs" />
+    <Compile Include="GameUI\UIFightRank\UIModelFightRank.cs" />
+    <Compile Include="GameUI\UIFightRank\UIViewFightRank.cs" />
+    <Compile Include="GameUI\UIFightRecord\UIFightRecord.cs" />
+    <Compile Include="GameUI\UIFightRecord\UIModelFightRecord.cs" />
+    <Compile Include="GameUI\UIFightRecord\UIViewFightRecord.cs" />
+    <Compile Include="GameUI\UIFightToTheEnd\UIFightToTheEnd.cs" />
+    <Compile Include="GameUI\UIFightToTheEnd\UIModelFightToTheEnd.cs" />
+    <Compile Include="GameUI\UIFightToTheEnd\UIViewFightToTheEnd.cs" />
+    <Compile Include="GameUI\UIBattleSupportGift\UIBattleSupportGift.cs" />
+    <Compile Include="GameUI\UIBattleSupportGift\UIModelBattleSupportGift.cs" />
+    <Compile Include="GameUI\UIBattleSupportGift\UIViewBattleSupportGift.cs" />
+    <Compile Include="GameUI\UIFuNeng\UIFuNeng.cs" />
+    <Compile Include="GameUI\UIFuNeng\UIModelFuNeng.cs" />
+    <Compile Include="GameUI\UIFuNeng\UIViewFuNeng.cs" />
+    <Compile Include="GameUI\UIGameFightWarMap\UIGameFightWarMap.cs" />
+    <Compile Include="GameUI\UIGameFightWarMap\UIModelGameFightWarMap.cs" />
+    <Compile Include="GameUI\UIGameFightWarMap\UIViewGameFightWarMap.cs" />
+    <Compile Include="GameUI\UIGameOverAwards\UIGameOverAwards.cs" />
+    <Compile Include="GameUI\UIGameOverAwards\UIModelGameOverAwards.cs" />
+    <Compile Include="GameUI\UIGameOverAwards\UIViewGameOverAwards.cs" />
+    <Compile Include="GameUI\UIGameTurnBased\UIGameTurnBased.cs" />
+    <Compile Include="GameUI\UIGameTurnBased\UIModelGameTurnBased.cs" />
+    <Compile Include="GameUI\UIGameTurnBased\UIViewGameTurnBased.cs" />
+    <Compile Include="GameUI\UIGiftBag\UIGiftBag.cs" />
+    <Compile Include="GameUI\UIGiftBag\UIModelGiftBag.cs" />
+    <Compile Include="GameUI\UIGiftBag\UIViewGiftBag.cs" />
+    <Compile Include="GameUI\UIGuardIslandBox\UIGuardIslandBox.cs" />
+    <Compile Include="GameUI\UIGuardIslandBox\UIModelGuardIslandBox.cs" />
+    <Compile Include="GameUI\UIGuardIslandBox\UIViewGuardIslandBox.cs" />
+    <Compile Include="GameUI\UIHallBox\UIHallBox.cs" />
+    <Compile Include="GameUI\UIHallBox\UIModelHallBox.cs" />
+    <Compile Include="GameUI\UIHallBox\UIViewHallBox.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\BaseState.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\HallBattleAttackState.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\HallBattleRestState.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\HallBattleStateMachine.cs" />
+    <Compile Include="GameUI\UIHall\HallBattle\IState.cs" />
+    <Compile Include="GameUI\UIHall\UIHall.Battle.cs" />
+    <Compile Include="GameUI\UIHall\UIHall.Box.cs" />
+    <Compile Include="GameUI\UIItemDesignatedUse\UIItemDesignatedUse.cs" />
+    <Compile Include="GameUI\UIItemDesignatedUse\UIModelItemDesignatedUse.cs" />
+    <Compile Include="GameUI\UIItemDesignatedUse\UIViewItemDesignatedUse.cs" />
+    <Compile Include="GameUI\UIJumpLoad\UIJumpLoad.cs" />
+    <Compile Include="GameUI\UIJumpLoad\UIModelJumpLoad.cs" />
+    <Compile Include="GameUI\UIJumpLoad\UIViewJumpLoad.cs" />
+    <Compile Include="GameUI\UILimitetRank\UILimitetRank.cs" />
+    <Compile Include="GameUI\UILimitetRank\UIModelLimitetRank.cs" />
+    <Compile Include="GameUI\UILimitetRank\UIViewLimitetRank.cs" />
+    <Compile Include="GameUI\UINewFunctionOpen\UIModelNewFunctionOpen.cs" />
+    <Compile Include="GameUI\UINewFunctionOpen\UINewFunctionOpen.cs" />
+    <Compile Include="GameUI\UINewFunctionOpen\UIViewNewFunctionOpen.cs" />
+    <Compile Include="GameUI\UINotice\UIModelNotice.cs" />
+    <Compile Include="GameUI\UINotice\UINotice.cs" />
+    <Compile Include="GameUI\UINotice\UIViewNotice.cs" />
+    <Compile Include="GameUI\UIPartnerCallSelect\UIModelPartnerCallSelect.cs" />
+    <Compile Include="GameUI\UIPartnerCallSelect\UIPartnerCallSelect.cs" />
+    <Compile Include="GameUI\UIPartnerCallSelect\UIViewPartnerCallSelect.cs" />
+    <Compile Include="GameUI\UIPartnetRecastDisassembling\UIPartnetRecastDisassembling.cs" />
+    <Compile Include="GameUI\UIPartnetRecastDisassembling\UIModelPartnetRecastDisassembling.cs" />
+    <Compile Include="GameUI\UIPartnetRecastDisassembling\UIViewPartnetRecastDisassembling.cs" />
+    <Compile Include="GameUI\UIGameGuildPro\UIGameGuildPro.cs" />
+    <Compile Include="GameUI\UIGameGuildPro\UIModelGameGuildPro.cs" />
+    <Compile Include="GameUI\UIGameGuildPro\UIViewGameGuildPro.cs" />
+    <Compile Include="GameUI\UIGuildDonation\UIGuildDonation.cs" />
+    <Compile Include="GameUI\UIGuildDonation\UIModelGuildDonation.cs" />
+    <Compile Include="GameUI\UIGuildDonation\UIViewGuildDonation.cs" />
+    <Compile Include="GameUI\UIGuildApplication\UIGuildApplication.cs" />
+    <Compile Include="GameUI\UIGuildApplication\UIModelGuildApplication.cs" />
+    <Compile Include="GameUI\UIGuildApplication\UIViewGuildApplication.cs" />
+    <Compile Include="GameUI\UIGuildInfo\UIModelGuildInfo.cs" />
+    <Compile Include="GameUI\UIGuildInfo\UIGuildInfo.cs" />
+    <Compile Include="GameUI\UIGuildInfo\UIViewGuildInfo.cs" />
+    <Compile Include="GameUI\UIGuildList\UIModelGuildList.cs" />
+    <Compile Include="GameUI\UIGuildList\UIGuildList.cs" />
+    <Compile Include="GameUI\UIGuildList\UIViewGuildList.cs" />
+    <Compile Include="GameUI\UIGuildMap\UIModelGuildMap.cs" />
+    <Compile Include="GameUI\UIGuildMap\UIGuildMap.cs" />
+    <Compile Include="GameUI\UIGuildMap\UIViewGuildMap.cs" />
+    <Compile Include="GameUI\UIGuildMemberList\UIModelGuildMemberList.cs" />
+    <Compile Include="GameUI\UIGuildMemberList\UIGuildMemberList.cs" />
+    <Compile Include="GameUI\UIGuildMemberList\UIViewGuildMemberList.cs" />
+    <Compile Include="GameUI\UICommonItemBuy\UICommonItemBuy.cs" />
+    <Compile Include="GameUI\UICommonItemBuy\UIModelCommonItemBuy.cs" />
+    <Compile Include="GameUI\UICommonItemBuy\UIViewCommonItemBuy.cs" />
+    <Compile Include="GameUI\UIGuildSkill\UIModelGuildSkill.cs" />
+    <Compile Include="GameUI\UIGuildSkill\UIGuildSkill.cs" />
+    <Compile Include="GameUI\UIGuildSkill\UIViewGuildSkill.cs" />
+    <Compile Include="GameUI\UIGuildStore\UIModelGuildStore.cs" />
+    <Compile Include="GameUI\UIGuildStore\UIGuildStore.cs" />
+    <Compile Include="GameUI\UIGuildStore\UIViewGuildStore.cs" />
+    <Compile Include="GameUI\UIGuild\UIGuild.cs" />
+    <Compile Include="GameUI\UIGuild\UIModelGuild.cs" />
+    <Compile Include="GameUI\UIGuild\UIViewGuild.cs" />
+    <Compile Include="GameUI\UICreateGuild\UICreateGuild.cs" />
+    <Compile Include="GameUI\UICreateGuild\UIModelCreateGuild.cs" />
+    <Compile Include="GameUI\UICreateGuild\UIViewCreateGuild.cs" />
+    <Compile Include="GameUI\UIExpPool\UIExpPool.cs" />
+    <Compile Include="GameUI\UIExpPool\UIModelExpPool.cs" />
+    <Compile Include="GameUI\UIExpPool\UIViewExpPool.cs" />
+    <Compile Include="GameUI\UIFightChapterAward\UIFightChapterAward.cs" />
+    <Compile Include="GameUI\UIFightChapterAward\UIModelFightChapterAward.cs" />
+    <Compile Include="GameUI\UIFightChapterAward\UIViewFightChapterAward.cs" />
+    <Compile Include="GameUI\UIGameFightOver\UIGameFightOver.cs" />
+    <Compile Include="GameUI\UIGameFightOver\UIModelGameFightOver.cs" />
+    <Compile Include="GameUI\UIGameFightOver\UIViewGameFightOver.cs" />
+    <Compile Include="GameUI\UIAwards\UIAwards.cs" />
+    <Compile Include="GameUI\UIAwards\UIModelAwards.cs" />
+    <Compile Include="GameUI\UIAwards\UIViewAwards.cs" />
+    <Compile Include="GameUI\UIBag\UIBag.cs" />
+    <Compile Include="GameUI\UIBag\UIModelBag.cs" />
+    <Compile Include="GameUI\UIBag\UIViewBag.cs" />
+    <Compile Include="GameUI\Login\LoginCtr.cs" />
+    <Compile Include="GameUI\UICDK\UICDK.cs" />
+    <Compile Include="GameUI\UICDK\UIModelCDK.cs" />
+    <Compile Include="GameUI\UICDK\UIViewCDK.cs" />
+    <Compile Include="GameUI\UIChangeName\UIChangeName.cs" />
+    <Compile Include="GameUI\UIChangeName\UIModelChangeName.cs" />
+    <Compile Include="GameUI\UIChangeName\UIViewChangeName.cs" />
+    <Compile Include="GameUI\UIChatSet\UIChatSet.cs" />
+    <Compile Include="GameUI\UIChatSet\UIModelChatSet.cs" />
+    <Compile Include="GameUI\UIChatSet\UIViewChatSet.cs" />
+    <Compile Include="GameUI\UIChat\UIChat.cs" />
+    <Compile Include="GameUI\UIChat\UIModelChat.cs" />
+    <Compile Include="GameUI\UIChat\UIViewChat.cs" />
+    <Compile Include="GameUI\UIChoiceSever\UIChoiceSever.cs" />
+    <Compile Include="GameUI\UIChoiceSever\UIModelChoiceSever.cs" />
+    <Compile Include="GameUI\UIChoiceSever\UIViewChoiceSever.cs" />
+    <Compile Include="GameUI\UIComRule\UIComRule.cs" />
+    <Compile Include="GameUI\UIComRule\UIModelComRule.cs" />
+    <Compile Include="GameUI\UIComRule\UIViewComRule.cs" />
+    <Compile Include="GameUI\UICom_DownBtns\UICom_DownBtns.cs" />
+    <Compile Include="GameUI\UICom_DownBtns\UIModelCom_DownBtns.cs" />
+    <Compile Include="GameUI\UICom_DownBtns\UIViewCom_DownBtns.cs" />
+    <Compile Include="GameUI\UICom_GVGBattle\UICom_GVGBattle.cs" />
+    <Compile Include="GameUI\UICom_GVGBattle\UIModelCom_GVGBattle.cs" />
+    <Compile Include="GameUI\UICom_GVGBattle\UIViewCom_GVGBattle.cs" />
+    <Compile Include="GameUI\UICom_TopRes\UICom_TopRes.cs" />
+    <Compile Include="GameUI\UICom_TopRes\UIModelCom_TopRes.cs" />
+    <Compile Include="GameUI\UICom_TopRes\UIViewCom_TopRes.cs" />
+    <Compile Include="GameUI\UICreatRole\UICreatRole.cs" />
+    <Compile Include="GameUI\UICreatRole\UIModelCreatRole.cs" />
+    <Compile Include="GameUI\UICreatRole\UIViewCreatRole.cs" />
+    <Compile Include="GameUI\UIDayDoAward\UIDayDoAward.cs" />
+    <Compile Include="GameUI\UIDayDoAward\UIModelDayDoAward.cs" />
+    <Compile Include="GameUI\UIDayDoAward\UIViewDayDoAward.cs" />
+    <Compile Include="GameUI\UIDayDo\UIDayDo.cs" />
+    <Compile Include="GameUI\UIDayDo\UIModelDayDo.cs" />
+    <Compile Include="GameUI\UIDayDo\UIViewDayDo.cs" />
+    <Compile Include="GameUI\UIEqipInsetRule\UIEqipInsetRule.cs" />
+    <Compile Include="GameUI\UIEqipInsetRule\UIModelEqipInsetRule.cs" />
+    <Compile Include="GameUI\UIEqipInsetRule\UIViewEqipInsetRule.cs" />
+    <Compile Include="GameUI\UIEquipMaster\UIEquipMaster.cs" />
+    <Compile Include="GameUI\UIEquipMaster\UIModelEquipMaster.cs" />
+    <Compile Include="GameUI\UIEquipMaster\UIViewEquipMaster.cs" />
+    <Compile Include="GameUI\UIEquipOff\UIEquipOff.cs" />
+    <Compile Include="GameUI\UIEquipOff\UIModelEquipOff.cs" />
+    <Compile Include="GameUI\UIEquipOff\UIViewEquipOff.cs" />
+    <Compile Include="GameUI\UIBuild_Equip\UIBuild_Equip.cs" />
+    <Compile Include="GameUI\UIBuild_Equip\UIModelBuild_Equip.cs" />
+    <Compile Include="GameUI\UIBuild_Equip\UIViewBuild_Equip.cs" />
+    <Compile Include="GameUI\UIFightChoice\UIFightChoice.cs" />
+    <Compile Include="GameUI\UIFightChoice\UIModelFightChoice.cs" />
+    <Compile Include="GameUI\UIFightChoice\UIViewFightChoice.cs" />
+    <Compile Include="GameUI\UIFirstPay\UIFirstPay.cs" />
+    <Compile Include="GameUI\UIFirstPay\UIModelFirstPay.cs" />
+    <Compile Include="GameUI\UIFirstPay\UIViewFirstPay.cs" />
+    <Compile Include="GameUI\UIGame3D\UIGame3D.cs" />
+    <Compile Include="GameUI\UIGame3D\UIModelGame3D.cs" />
+    <Compile Include="GameUI\UIGame3D\UIViewGame3D.cs" />
+    <Compile Include="GameUI\UIGameDayDoPro\UIGameDayDoPro.cs" />
+    <Compile Include="GameUI\UIGameDayDoPro\UIModelGameDayDoPro.cs" />
+    <Compile Include="GameUI\UIGameDayDoPro\UIViewGameDayDoPro.cs" />
+    <Compile Include="GameUI\UIGameDungeons\UIGameDungeons.cs" />
+    <Compile Include="GameUI\UIGameDungeons\UIModelGameDungeons.cs" />
+    <Compile Include="GameUI\UIGameDungeons\UIViewGameDungeons.cs" />
+    <Compile Include="GameUI\UIGameFightRevive\UIGameFightRevive.cs" />
+    <Compile Include="GameUI\UIGameFightRevive\UIModelGameFightRevive.cs" />
+    <Compile Include="GameUI\UIGameFightRevive\UIViewGameFightRevive.cs" />
+    <Compile Include="GameUI\UIGameFightSelect\UIGameFightSelect.cs" />
+    <Compile Include="GameUI\UIGameFightSelect\UIModelGameFightSelect.cs" />
+    <Compile Include="GameUI\UIGameFightSelect\UIViewGameFightSelect.cs" />
+    <Compile Include="GameUI\UIGameRelicPro\UIGameRelicPro.cs" />
+    <Compile Include="GameUI\UIGameRelicPro\UIModelGameRelicPro.cs" />
+    <Compile Include="GameUI\UIGameRelicPro\UIViewGameRelicPro.cs" />
+    <Compile Include="GameUI\UIGameSweepAndBuy\UIGameSweepAndBuy.cs" />
+    <Compile Include="GameUI\UIGameSweepAndBuy\UIModelGameSweepAndBuy.cs" />
+    <Compile Include="GameUI\UIGameSweepAndBuy\UIViewGameSweepAndBuy.cs" />
+    <Compile Include="GameUI\UIGuide\UIGuide.cs" />
+    <Compile Include="GameUI\UIGuide\UIModelGuide.cs" />
+    <Compile Include="GameUI\UIGuide\UIViewGuide.cs" />
+    <Compile Include="GameUI\UIGVGGameOver\UIGVGGameOver.cs" />
+    <Compile Include="GameUI\UIGVGGameOver\UIModelGVGGameOver.cs" />
+    <Compile Include="GameUI\UIGVGGameOver\UIViewGVGGameOver.cs" />
+    <Compile Include="GameUI\UIHall\UIHall.cs" />
+    <Compile Include="GameUI\UIHall\UIModelHall.cs" />
+    <Compile Include="GameUI\UIHall\UIViewHall.cs" />
+    <Compile Include="GameUI\UIItemShow\UIItemShow.cs" />
+    <Compile Include="GameUI\UIItemShow\UIModelItemShow.cs" />
+    <Compile Include="GameUI\UIItemShow\UIViewItemShow.cs" />
+    <Compile Include="GameUI\UIItemUesTips\UIItemUesTips.cs" />
+    <Compile Include="GameUI\UIItemUesTips\UIModelItemUesTips.cs" />
+    <Compile Include="GameUI\UIItemUesTips\UIViewItemUesTips.cs" />
+    <Compile Include="GameUI\UIItemUseOrDel\UIItemUseOrDel.cs" />
+    <Compile Include="GameUI\UIItemUseOrDel\UIModelItemUseOrDel.cs" />
+    <Compile Include="GameUI\UIItemUseOrDel\UIViewItemUseOrDel.cs" />
+    <Compile Include="GameUI\UIJewelSelect\UIJewelSelect.cs" />
+    <Compile Include="GameUI\UIJewelSelect\UIModelJewelSelect.cs" />
+    <Compile Include="GameUI\UIJewelSelect\UIViewJewelSelect.cs" />
+    <Compile Include="GameUI\UILoading\UILoading.cs" />
+    <Compile Include="GameUI\UILoading\UIModelLoading.cs" />
+    <Compile Include="GameUI\UILoading\UIViewLoading.cs" />
+    <Compile Include="GameUI\UILoginDes\UILoginDes.cs" />
+    <Compile Include="GameUI\UILoginDes\UIModelLoginDes.cs" />
+    <Compile Include="GameUI\UILoginDes\UIViewLoginDes.cs" />
+    <Compile Include="GameUI\UIMailDetail\UIMailDetail.cs" />
+    <Compile Include="GameUI\UIMailDetail\UIModelMailDetail.cs" />
+    <Compile Include="GameUI\UIMailDetail\UIViewMailDetail.cs" />
+    <Compile Include="GameUI\UIMail\UIMail.cs" />
+    <Compile Include="GameUI\UIMail\UIModelMail.cs" />
+    <Compile Include="GameUI\UIMail\UIViewMail.cs" />
+    <Compile Include="GameUI\UIMessageBoxOne\UIMessageBoxOne.cs" />
+    <Compile Include="GameUI\UIMessageBoxOne\UIModelMessageBoxOne.cs" />
+    <Compile Include="GameUI\UIMessageBoxOne\UIViewMessageBoxOne.cs" />
+    <Compile Include="GameUI\UIMessageDestoryRole\UIMessageDestoryRole.cs" />
+    <Compile Include="GameUI\UIMessageDestoryRole\UIModelMessageDestoryRole.cs" />
+    <Compile Include="GameUI\UIMessageDestoryRole\UIViewMessageDestoryRole.cs" />
+    <Compile Include="GameUI\UIOpenBoxSetting\UIModelOpenBoxSetting.cs" />
+    <Compile Include="GameUI\UIOpenBoxSetting\UIOpenBoxSetting.cs" />
+    <Compile Include="GameUI\UIOpenBoxSetting\UIViewOpenBoxSetting.cs" />
+    <Compile Include="GameUI\UIPartnerBook\UIModelPartnerBook.cs" />
+    <Compile Include="GameUI\UIPartnerBook\UIPartnerBook.cs" />
+    <Compile Include="GameUI\UIPartnerBook\UIViewPartnerBook.cs" />
+    <Compile Include="GameUI\UIPartnerCall\UIModelPartnerCall.cs" />
+    <Compile Include="GameUI\UIPartnerCall\UIPartnerCall.cs" />
+    <Compile Include="GameUI\UIPartnerCall\UIViewPartnerCall.cs" />
+    <Compile Include="GameUI\UIPartnerUpStar\UIModelPartnerUpStar.cs" />
+    <Compile Include="GameUI\UIPartnerUpStar\UIPartnerUpStar.cs" />
+    <Compile Include="GameUI\UIPartnerUpStar\UIViewPartnerUpStar.cs" />
+    <Compile Include="GameUI\UIPartnerUp\UIModelPartnerUp.cs" />
+    <Compile Include="GameUI\UIPartnerUp\UIPartnerUp.cs" />
+    <Compile Include="GameUI\UIPartnerUp\UIViewPartnerUp.cs" />
+    <Compile Include="GameUI\UIPayBindToSure\UIModelPayBindToSure.cs" />
+    <Compile Include="GameUI\UIPayBindToSure\UIPayBindToSure.cs" />
+    <Compile Include="GameUI\UIPayBindToSure\UIViewPayBindToSure.cs" />
+    <Compile Include="GameUI\UIPayBind\UIModelPayBind.cs" />
+    <Compile Include="GameUI\UIPayBind\UIPayBind.cs" />
+    <Compile Include="GameUI\UIPayBind\UIViewPayBind.cs" />
+    <Compile Include="GameUI\UIPetAward\UIModelPetAward.cs" />
+    <Compile Include="GameUI\UIPetAward\UIPetAward.cs" />
+    <Compile Include="GameUI\UIPetAward\UIViewPetAward.cs" />
+    <Compile Include="GameUI\UIPetBook\UIModelPetBook.cs" />
+    <Compile Include="GameUI\UIPetBook\UIPetBook.cs" />
+    <Compile Include="GameUI\UIPetBook\UIViewPetBook.cs" />
+    <Compile Include="GameUI\UIPetShow\UIModelPetShow.cs" />
+    <Compile Include="GameUI\UIPetShow\UIPetShow.cs" />
+    <Compile Include="GameUI\UIPetShow\UIViewPetShow.cs" />
+    <Compile Include="GameUI\UIPetUp\UIModelPetUp.cs" />
+    <Compile Include="GameUI\UIPetUp\UIPetUp.cs" />
+    <Compile Include="GameUI\UIPetUp\UIViewPetUp.cs" />
+    <Compile Include="GameUI\UIPet\UIModelPet.cs" />
+    <Compile Include="GameUI\UIPet\UIPet.cs" />
+    <Compile Include="GameUI\UIPet\UIViewPet.cs" />
+    <Compile Include="GameUI\UIPhoneLoginToSure\UIModelPhoneLoginToSure.cs" />
+    <Compile Include="GameUI\UIPhoneLoginToSure\UIPhoneLoginToSure.cs" />
+    <Compile Include="GameUI\UIPhoneLoginToSure\UIViewPhoneLoginToSure.cs" />
+    <Compile Include="GameUI\UIPhoneLogin\UIModelPhoneLogin.cs" />
+    <Compile Include="GameUI\UIPhoneLogin\UIPhoneLogin.cs" />
+    <Compile Include="GameUI\UIPhoneLogin\UIViewPhoneLogin.cs" />
+    <Compile Include="GameUI\UIGuildShopItemBuy\UIModelGuildShopItemBuy.cs" />
+    <Compile Include="GameUI\UIGuildShopItemBuy\UIGuildShopItemBuy.cs" />
+    <Compile Include="GameUI\UIGuildShopItemBuy\UIViewGuildShopItemBuy.cs" />
+    <Compile Include="GameUI\UIPushWallGame\ComboWidget\ComboHandle.cs" />
+    <Compile Include="GameUI\UIPushWallGame\ComboWidget\ComboItem.cs" />
+    <Compile Include="GameUI\UIPushWallGame\ComboWidget\ComboItemsMgr.cs" />
+    <Compile Include="GameUI\UIPushWallGame\PushWallSkill\PushWallSKillItem.cs" />
+    <Compile Include="GameUI\UIPushWallGame\PushWallSkill\PushWallSKillMgr.cs" />
+    <Compile Include="GameUI\UIPushWallGame\UIPushWallGame.cs" />
+    <Compile Include="GameUI\UIRealName\UIModelRealName.cs" />
+    <Compile Include="GameUI\UIRealName\UIRealName.cs" />
+    <Compile Include="GameUI\UIRealName\UIViewRealName.cs" />
+    <Compile Include="GameUI\UIRelicChallange\UIModelRelicChallange.cs" />
+    <Compile Include="GameUI\UIRelicChallange\UIRelicChallange.cs" />
+    <Compile Include="GameUI\UIRelicChallange\UIViewRelicChallange.cs" />
+    <Compile Include="GameUI\UIOtherRole\UIModelOtherRole.cs" />
+    <Compile Include="GameUI\UIOtherRole\UIOtherRole.cs" />
+    <Compile Include="GameUI\UIOtherRole\UIViewOtherRole.cs" />
+    <Compile Include="GameUI\UIRoleTitile\UIModelRoleTitile.cs" />
+    <Compile Include="GameUI\UIRoleTitile\UIRoleTitile.cs" />
+    <Compile Include="GameUI\UIRoleTitile\UIViewRoleTitile.cs" />
+    <Compile Include="GameUI\UIRole_Skill\UIModelRole_Skill.cs" />
+    <Compile Include="GameUI\UIRole_Skill\UIRole_Skill.cs" />
+    <Compile Include="GameUI\UIRole_Skill\UIViewRole_Skill.cs" />
+    <Compile Include="GameUI\UISpecialOffer\UIModelSpecialOffer.cs" />
+    <Compile Include="GameUI\UISpecialOffer\UISpecialOffer.cs" />
+    <Compile Include="GameUI\UISpecialOffer\UIViewSpecialOffer.cs" />
+    <Compile Include="GameUI\UIStarDetails\UIModelStarDetails.cs" />
+    <Compile Include="GameUI\UIStarDetails\UIStarDetails.cs" />
+    <Compile Include="GameUI\UIStarDetails\UIViewStarDetails.cs" />
+    <Compile Include="GameUI\UIStarTalismanUse\UIModelStarTalismanUse.cs" />
+    <Compile Include="GameUI\UIStarTalismanUse\UIStarTalismanUse.cs" />
+    <Compile Include="GameUI\UIStarTalismanUse\UIViewStarTalismanUse.cs" />
+    <Compile Include="GameUI\UIStrengthen\UIModelStrengthen.cs" />
+    <Compile Include="GameUI\UIStrengthen\UIStrengthen.cs" />
+    <Compile Include="GameUI\UIStrengthen\UIViewStrengthen.cs" />
+    <Compile Include="GameUI\UISynthesisMoreAward\UIModelSynthesisMoreAward.cs" />
+    <Compile Include="GameUI\UISynthesisMoreAward\UISynthesisMoreAward.cs" />
+    <Compile Include="GameUI\UISynthesisMoreAward\UIViewSynthesisMoreAward.cs" />
+    <Compile Include="GameUI\UISynthesisSelect\UIModelSynthesisSelect.cs" />
+    <Compile Include="GameUI\UISynthesisSelect\UISynthesisSelect.cs" />
+    <Compile Include="GameUI\UISynthesisSelect\UIViewSynthesisSelect.cs" />
+    <Compile Include="GameUI\UIMoreItemsDel\UIModelMoreItemsDel.cs" />
+    <Compile Include="GameUI\UIMoreItemsDel\UIMoreItemsDel.cs" />
+    <Compile Include="GameUI\UIMoreItemsDel\UIViewMoreItemsDel.cs" />
+    <Compile Include="GameUI\UINoticeRun\UIModelNoticeRun.cs" />
+    <Compile Include="GameUI\UINoticeRun\UINoticeRun.cs" />
+    <Compile Include="GameUI\UINoticeRun\UIViewNoticeRun.cs" />
+    <Compile Include="GameUI\UIPowerTip\UIModelPowerTip.cs" />
+    <Compile Include="GameUI\UIPowerTip\UIPowerTip.cs" />
+    <Compile Include="GameUI\UIPowerTip\UIViewPowerTip.cs" />
+    <Compile Include="GameUI\UIPrivilegeCard\UIModelPrivilegeCard.cs" />
+    <Compile Include="GameUI\UIPrivilegeCard\UIPrivilegeCard.cs" />
+    <Compile Include="GameUI\UIPrivilegeCard\UIViewPrivilegeCard.cs" />
+    <Compile Include="GameUI\UIPVPBeginTime\UIModelPVPBeginTime.cs" />
+    <Compile Include="GameUI\UIPVPBeginTime\UIPVPBeginTime.cs" />
+    <Compile Include="GameUI\UIPVPBeginTime\UIViewPVPBeginTime.cs" />
+    <Compile Include="GameUI\UIPVPCountBuy\UIModelPVPCountBuy.cs" />
+    <Compile Include="GameUI\UIPVPCountBuy\UIPVPCountBuy.cs" />
+    <Compile Include="GameUI\UIPVPCountBuy\UIViewPVPCountBuy.cs" />
+    <Compile Include="GameUI\UIPVPGameOver\UIModelPVPGameOver.cs" />
+    <Compile Include="GameUI\UIPVPGameOver\UIPVPGameOver.cs" />
+    <Compile Include="GameUI\UIPVPGameOver\UIViewPVPGameOver.cs" />
+    <Compile Include="GameUI\UIPVPOneReady\UIModelPVPOneReady.cs" />
+    <Compile Include="GameUI\UIPVPOneReady\UIPVPOneReady.cs" />
+    <Compile Include="GameUI\UIPVPOneReady\UIViewPVPOneReady.cs" />
+    <Compile Include="GameUI\UIRank\UIModelRank.cs" />
+    <Compile Include="GameUI\UIRank\UIRank.cs" />
+    <Compile Include="GameUI\UIRank\UIViewRank.cs" />
+    <Compile Include="GameUI\UIRole\UIModelRole.cs" />
+    <Compile Include="GameUI\UIRole\UIRole.cs" />
+    <Compile Include="GameUI\UIRole\UIViewRole.cs" />
+    <Compile Include="GameUI\UISelectRole\UIModelSelectRole.cs" />
+    <Compile Include="GameUI\UISelectRole\UISelectRole.cs" />
+    <Compile Include="GameUI\UISelectRole\UIViewSelectRole.cs" />
+    <Compile Include="GameUI\UISetting\UIModelSetting.cs" />
+    <Compile Include="GameUI\UISetting\UISetting.cs" />
+    <Compile Include="GameUI\UISetting\UIViewSetting.cs" />
+    <Compile Include="GameUI\UIShop\UIModelShop.cs" />
+    <Compile Include="GameUI\UIShop\UIShop.cs" />
+    <Compile Include="GameUI\UIShop\UIViewShop.cs" />
+    <Compile Include="GameUI\UIBuild_Skill\UIModelBuild_Skill.cs" />
+    <Compile Include="GameUI\UIBuild_Skill\UIBuild_Skill.cs" />
+    <Compile Include="GameUI\UIBuild_Skill\UIViewBuild_Skill.cs" />
+    <Compile Include="GameUI\UISynthesis\UIModelSynthesis.cs" />
+    <Compile Include="GameUI\UISynthesis\UISynthesis.cs" />
+    <Compile Include="GameUI\UISynthesis\UIViewSynthesis.cs" />
+    <Compile Include="GameUI\UITask\UIModelTask.cs" />
+    <Compile Include="GameUI\UITask\UITask.cs" />
+    <Compile Include="GameUI\UITask\UIViewTask.cs" />
+    <Compile Include="GameUI\UIActivityEntrance\UIModelActivityEntrance.cs" />
+    <Compile Include="GameUI\UIActivityEntrance\UIActivityEntrance.cs" />
+    <Compile Include="GameUI\UIActivityEntrance\UIViewActivityEntrance.cs" />
+    <Compile Include="GameUI\UIRefinePreview\UIModelRefinePreview.cs" />
+    <Compile Include="GameUI\UIRefinePreview\UIRefinePreview.cs" />
+    <Compile Include="GameUI\UIRefinePreview\UIViewRefinePreview.cs" />
+    <Compile Include="GameUI\UIRoleAvatar\UIModelRoleAvatar.cs" />
+    <Compile Include="GameUI\UIRoleAvatar\UIRoleAvatar.cs" />
+    <Compile Include="GameUI\UIRoleAvatar\UIViewRoleAvatar.cs" />
+    <Compile Include="GameUI\UITitleActivity\UIModelTitleActivity.cs" />
+    <Compile Include="GameUI\UITitleActivity\UITitleActivity.cs" />
+    <Compile Include="GameUI\UITitleActivity\UIViewTitleActivity.cs" />
+    <Compile Include="GameUI\UITitleLuckChoice\UIModelTitleLuckChoice.cs" />
+    <Compile Include="GameUI\UITitleLuckChoice\UITitleLuckChoice.cs" />
+    <Compile Include="GameUI\UITitleLuckChoice\UIViewTitleLuckChoice.cs" />
+    <Compile Include="GameUI\UITrialFund\UIModelTrialFund.cs" />
+    <Compile Include="GameUI\UITrialFund\UITrialFund.cs" />
+    <Compile Include="GameUI\UITrialFund\UIViewTrialFund.cs" />
+    <Compile Include="GameUI\UIVIP\UIModelVIP.cs" />
+    <Compile Include="GameUI\UIVIP\UIViewVIP.cs" />
+    <Compile Include="GameUI\UIVIP\UIVIP.cs" />
+    <Compile Include="GameUI\UIWarFightInfo\UIModelWarFightInfo.cs" />
+    <Compile Include="GameUI\UIWarFightInfo\UIViewWarFightInfo.cs" />
+    <Compile Include="GameUI\UIWarFightInfo\UIWarFightInfo.cs" />
+    <Compile Include="GameUI\UIWarFightMap\UIModelWarFightMap.cs" />
+    <Compile Include="GameUI\UIWarFightMap\UIViewWarFightMap.cs" />
+    <Compile Include="GameUI\UIWarFightMap\UIWarFightMap.cs" />
+    <Compile Include="GameUI\UIWorldBoss\UIModelWorldBoss.cs" />
+    <Compile Include="GameUI\UIWorldBoss\UIViewWorldBoss.cs" />
+    <Compile Include="GameUI\UIWorldBoss\UIWorldBoss.cs" />
+    <Compile Include="GameUI\UIWuXingTrials\UIModelWuXingTrials.cs" />
+    <Compile Include="GameUI\UIWuXingTrials\UIViewWuXingTrials.cs" />
+    <Compile Include="GameUI\UIWuXingTrials\UIWuXingTrials.cs" />
+    <Compile Include="Game\GameHelper.cs" />
+    <Compile Include="Game\GameMonster\Monster.cs" />
+    <Compile Include="Game\GameMonster\MonsterManager.cs" />
+    <Compile Include="Game\GameRole\CanvasScale.cs" />
+    <Compile Include="Game\GameRole\FollowTarget.cs" />
+    <Compile Include="Game\GameRole\OtherRole.cs" />
+    <Compile Include="Game\GameRole\MainRole.cs" />
+    <Compile Include="Game\GameRole\Role.cs" />
+    <Compile Include="Game\GameScene\FightController.cs" />
+    <Compile Include="Game\GameScene\SceneManager.cs" />
+    <Compile Include="Game\GameConst.cs" />
+    <Compile Include="Game\FSM\BattleTimerWidget.cs" />
+    <Compile Include="Game\FSM\CommonTimerWidgetBase.cs" />
+    <Compile Include="Game\FSM\MiniFsm.cs" />
+    <Compile Include="Game\FSM\State.cs" />
+    <Compile Include="Game\MiniGamePushWall\PushWallMainFsm.cs" />
+    <Compile Include="Game\TurnBased\TurnBasedFightCtrl.cs" />
+    <Compile Include="Game\TurnBased\TurnBasedRole.cs" />
+    <Compile Include="Game\TurnBased\TurnBasedRoleManager.cs" />
+    <Compile Include="JEngine\Helper\AudioKey.cs" />
+    <Compile Include="JEngine\Helper\AudioManager.cs" />
+    <Compile Include="JEngine\Helper\SpineUtil.cs" />
+    <Compile Include="JEngine\Helper\GameUtil.cs" />
+    <Compile Include="JEngine\Helper\HttpRequestHelper.cs" />
+    <Compile Include="JEngine\Helper\PoolHelper.cs" />
+    <Compile Include="JEngine\Helper\ResouseHelper.cs" />
+    <Compile Include="JEngine\MyNet\TcpClientGroup.cs" />
+    <Compile Include="JEngine\MyNet\TCPClientMgr.cs" />
+    <Compile Include="JEngine\MyNet\TcpClientUnit.cs" />
+    <Compile Include="JEngine\Singleton\MonoSingletonTemplate.cs" />
+    <Compile Include="JEngine\Singleton\SingletonTemplate.cs" />
+    <Compile Include="MateUI\UI\UIControlWidget\UIShowImgByIndx.cs" />
+    <Compile Include="MateUI\UI\UIControlWidget\UISwitchButton.cs" />
+    <Compile Include="ProtoM\GuidanceM.cs" />
+    <Compile Include="ProtoM\TitleM.cs" />
+    <Compile Include="Proto\errorcode.cs" />
+    <Compile Include="UniEvent\EventDelegateData.cs" />
+    <Compile Include="UniEvent\EventDispatcher.cs" />
+    <Compile Include="UniEvent\EventMgr.cs" />
+    <Compile Include="MateUI\ExcelData\CFGItemBase.cs" />
+    <Compile Include="MateUI\ExcelData\CFGTableBase.cs" />
+    <Compile Include="MateUI\ExcelData\ExcelDataManager.cs" />
+    <Compile Include="UniEvent\UniGameEvent.cs" />
+    <Compile Include="UniEvent\RuntimeId.cs" />
+    <Compile Include="MateUI\UI\BindingData.cs" />
+    <Compile Include="GameUI\Login\UILogin.cs" />
+    <Compile Include="GameUI\UIMessageBox\UIMessageBox.cs" />
+    <Compile Include="GameUI\UIMessageBox\UIModelMessageBox.cs" />
+    <Compile Include="GameUI\UIMessageBox\UIViewMessageBox.cs" />
+    <Compile Include="GameUI\UITips\UIModelTips.cs" />
+    <Compile Include="GameUI\UITips\UITips.cs" />
+    <Compile Include="GameUI\UITips\UIViewTips.cs" />
+    <Compile Include="MateUI\UI\Interface\IUIBase.cs" />
+    <Compile Include="MateUI\UI\Interface\IUIModel.cs" />
+    <Compile Include="MateUI\UI\Interface\IUIView.cs" />
+    <Compile Include="MateUI\UI\RedPoint\RedPointC.cs" />
+    <Compile Include="MateUI\UI\RedPoint\RedPointNode.cs" />
+    <Compile Include="MateUI\UI\RedPoint\RedPointManager.cs" />
+    <Compile Include="MateUI\UI\RedPoint\RedPointConst.cs" />
+    <Compile Include="MateUI\UI\RedPoint\RedPointSystems.cs" />
+    <Compile Include="MateUI\UI\UIBase.cs" />
+    <Compile Include="MateUI\UI\UILayer.cs" />
+    <Compile Include="MateUI\UI\UIManager.cs" />
+    <Compile Include="MateUI\UI\UITool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="JEngine\Core\JSaver.cs" />
+    <Compile Include="JEngine\Core\JObjectPool.cs" />
+    <Compile Include="JEngine\Core\JBehaviour.cs" />
+    <Compile Include="JEngine\Core\JAction.cs" />
+    <Compile Include="JEngine\Core\JPrefab.cs" />
+    <Compile Include="JEngine\Core\Singleton.cs" />
+    <Compile Include="JEngine\Event\JEvent.cs" />
+    <Compile Include="JEngine\Event\EventEnum.cs" />
+    <Compile Include="JEngine\Event\EventAttributes.cs" />
+    <Compile Include="JEngine\Core\JExtensions.cs" />
+    <Compile Include="JEngine\Examples\Core\ConvertDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\CrossDomainDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\InstantiateDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\JBehaviourExample.cs" />
+    <Compile Include="JEngine\Examples\Data\DataClass.cs" />
+    <Compile Include="JEngine\Examples\Event\EventDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\MultiInheritenceDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\ClassBindDemo.cs" />
+    <Compile Include="JEngine\UI\JUIExtensions.cs" />
+    <Compile Include="JEngine\Core\JValidation.cs" />
+    <Compile Include="JEngine\Examples\Core\ValidationDemo.cs" />
+    <Compile Include="JEngine\Examples\Core\AddOnDemo.cs" />
+    <Compile Include="ProtoM\BondM.cs" />
+    <Compile Include="ProtoM\ChatM.cs" />
+    <Compile Include="ProtoM\GiftBagM.cs" />
+    <Compile Include="ProtoM\GuildM.cs" />
+    <Compile Include="ProtoM\HallBattleM.cs" />
+    <Compile Include="ProtoM\HttpM.cs" />
+    <Compile Include="ProtoM\FightPlayM.cs" />
+    <Compile Include="ProtoM\PetM.cs" />
+    <Compile Include="ProtoM\PartnerM.cs" />
+    <Compile Include="ProtoM\RedDotM.cs" />
+    <Compile Include="ProtoM\StateM.cs" />
+    <Compile Include="ProtoM\TipM.cs" />
+    <Compile Include="ProtoM\PrivilegeM.cs" />
+    <Compile Include="ProtoM\RankM.cs" />
+    <Compile Include="ProtoM\SignM.cs" />
+    <Compile Include="ProtoM\TaskM.cs" />
+    <Compile Include="ProtoM\SkillM.cs" />
+    <Compile Include="ProtoM\MailM.cs" />
+    <Compile Include="ProtoM\ActivityM.cs" />
+    <Compile Include="ProtoM\StoreM.cs" />
+    <Compile Include="ProtoM\GameRoomM.cs" />
+    <Compile Include="ProtoM\GameM.cs" />
+    <Compile Include="ProtoM\BagM.cs" />
+    <Compile Include="ProtoM\RoleM.cs" />
+    <Compile Include="ProtoM\TurnBasedM.cs" />
+    <Compile Include="Proto\Common.cs" />
+    <Compile Include="Proto\TcpC.cs" />
+    <Compile Include="Proto\HttpC.cs" />
+    <Compile Include="Proto\Msg.cs" />
+    <Compile Include="Proto\ProtoC.cs" />
+    <Compile Include="Proto\ProtoMap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BestHTTP">
+      <HintPath>..\Library\ScriptAssemblies\BestHTTP.dll</HintPath>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Dlls\DemiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Dlls\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>Dlls\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-csharp">
+      <HintPath>Dlls\spine-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>Dlls\spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="UniTask">
+      <HintPath>..\Library\ScriptAssemblies\UniTask.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>Dlls\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>Dlls\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>Dlls\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>Dlls\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>Dlls\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>Dlls\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>Dlls\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>Dlls\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>Dlls\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>Dlls\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>Dlls\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>Dlls\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Dlls\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>Dlls\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Dlls\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ILRuntime">
+      <HintPath>..\Library\ScriptAssemblies\ILRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>..\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\Library\ScriptAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>Dlls\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset">
+      <HintPath>..\Library\ScriptAssemblies\YooAsset.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <StandardHeader IncludeInNewFiles="True" Text="&#xA;${FileName}&#xA; &#xA;Author:&#xA;      ${AuthorName} &lt;${AuthorEmail}&gt;&#xA;&#xA;Copyright (c) ${Year} ${CopyrightHolder}&#xA;&#xA;Permission is hereby granted, free of charge, to any person obtaining a copy&#xA;of this software and associated documentation files (the &quot;Software&quot;), to deal&#xA;in the Software without restriction, including without limitation the rights&#xA;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#xA;copies of the Software, and to permit persons to whom the Software is&#xA;furnished to do so, subject to the following conditions:&#xA;&#xA;The above copyright notice and this permission notice shall be included in&#xA;all copies or substantial portions of the Software.&#xA;&#xA;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#xA;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#xA;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xA;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xA;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xA;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN&#xA;THE SOFTWARE." />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

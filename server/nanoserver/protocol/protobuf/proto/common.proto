@@ -1,0 +1,1059 @@
+syntax = "proto3";
+
+option go_package = "../pb";
+
+package pb;
+enum CmdId{
+	UnknownCmd 			= 0; 			//未知
+	C2S_Login 			= 1001; 		//登录
+	C2S_Join 			= 1002;			//玩家进入
+	C2S_Exit 			= 1003;			//玩家退出
+	C2S_Move 			= 1004;			//移动
+	C2S_Attack 			= 1005;			//攻击
+	C2S_GetBag 			= 1006;			//包裹信息
+	C2S_ItemUse 		= 1007;			//使用道具
+	C2S_ItemDestroy 	= 1008;			//销毁道具
+	C2S_ItemDisassembly = 1009; 		//装备分解
+	C2S_InstanceTimeAdd = 1010; 		//增加时间
+	C2S_Revive			= 1011; 		//复活
+	C2S_ChangeEquip		= 1012; 		//穿脱装备
+	C2S_TaskComplate	= 1013;			//完成任务
+	C2S_MatchingRequest = 1014;			//匹配
+	C2S_MatchingReady   = 1015;			//准备
+	C2S_ChangeRoleName  = 1016;			//改变角色名字
+	C2S_Enhance    		= 1017;			//强化
+	C2S_Stars    		= 1018;			//升星
+	C2S_EquipRefine   	= 1019;			//装备洗炼
+	C2S_EquipRefineReplace = 1020;		//保留洗练属性
+	C2S_Chat			= 1021; 		//聊天
+	C2S_SkillChange		= 1022; 		//更改技能
+	C2S_SkillUpgrade	= 1023; 		//升级技能
+	C2S_SkillAdvanced	= 1024; 		//升级技能
+	C2S_EndlesstrialsReward = 1025; 	//爬塔奖励
+	C2S_StarsLevel		= 1026; 		//升级技能
+	C2S_PVPInfo 		= 1027;
+	C2S_Compose 		= 1028;
+	C2S_CheckBoss 		= 1029;
+	C2S_GemstoneChange 	= 1030; 		//更改宝石
+	C2S_DoubleReward 	= 1031; 		//双倍领取奖励
+	C2S_CopySweep 		= 1032; 		//扫荡
+	C2S_GemstoneChangeAll = 1033; 		//一键更改宝石
+	C2S_Mining			= 1034; 		//挖矿
+	C2S_DailyMapInfo	= 1035; 		//每日副本挑战信息
+	C2S_AutoPlay 		= 1036;			//自动战斗
+	C2S_AutoDisassembly = 1037; 		//自动分解
+	C2S_HomeOpenBox		= 1038;			//首页开宝箱
+	C2S_UpgradeLevel	= 1039; 		//升级角色等级
+	C2S_BoxResIntoBag	= 1040; 		//宝箱物品入库
+	C2S_PartnerStar		= 1041;  		//伙伴升星
+	C2S_PartnerCombat	= 1042; 		//伙伴战斗
+	C2S_PartnerRest		= 1043; 		//伙伴休息
+	C2S_PartnerList		= 1044; 		//伙伴列表
+	C2S_PartnerSlotInfo	= 1045; 		//伙伴槽位信息
+	C2S_EquipBest 		= 1046; 		//一键穿戴
+	C2S_PetCombat		= 1047; 		//宠物战斗
+	C2S_PetRest			= 1048; 		//宠物休息
+	C2S_PetStar		   	= 1049; 		//宠物升星
+	C2S_PetLevel		= 1050; 		//宠物升级
+	C2S_PetMove		   	= 1051; 		//宠物移动
+	C2S_InstanceInfo	= 1052; 		//副本信息
+	C2S_BattleReward	= 1053; 		//章节奖励
+	C2S_PartnerCompose	= 1054; 		//伙伴合成
+	C2S_HomeUpgradeBox 	= 1055; 		//升级宝箱
+	C2S_HomeUpgradeBoxQuick = 1056; 	//加速升级宝箱
+	C2S_GuildList 		= 1057; 		//工会列表
+	C2S_GuildCreate 	= 1058; 		//创建工会
+	C2S_GuildApply 		= 1059; 		//申请加入工会
+	C2S_GuildCancelApply	= 1060; 		//撤销申请加入
+	C2S_GuildDismiss 	= 1061; 		//解散工会
+	C2S_GuildLeave 		= 1062; 		//离开工会
+	C2S_GuildKick 		= 1063; 		//踢出工会
+	C2S_GuildPromote 	= 1064; 		//提升工会职位
+	C2S_GuildApplyList 	= 1065; 		//申请列表
+	C2S_GuildHandleApply 	= 1066; 		//处理申请
+	C2S_GuildInfo 		= 1067; 		//工会信息
+	C2S_GuildMemberList = 1068; 		//工会成员列表
+	C2S_GuildDonateInfo 	= 1069; 		// 工会捐献信息
+	C2S_GuildDonate 		= 1070; 		// 工会捐献
+	C2S_GuildShopBuyInfo 	= 1071; 		// 工会商店购买信息
+	C2S_GuildShopBuy 		= 1072; 		// 工会商店购买
+	C2S_GuildUpgradeSkill 	= 1073; 		// 工会技能升级
+	C2S_ObservePlayerInfo = 1074; 		// 观察玩家信息
+	C2S_HomeBoxSetting 	= 1075; 		//首页宝箱设置
+	C2S_PartnerReforge = 1076; 		//伙伴重铸
+	C2S_PartnerDisassemble = 1077; 		//伙伴分解
+	C2S_PvpMatchingRequest = 1078; 		// 匹配对手
+	C2S_PVPChallengeRequest = 1079; 	//挑战对手
+	C2S_PartnerReplace = 1080; 		//伙伴交换
+	C2S_PvpRecoder = 1081; 		// 查看PVP记录
+	// C2S_ActivityRewardReceive = 1082;  // 活动奖励领取
+	C2S_GuidanceUpdate = 1083;  // 引导更新
+	C2S_TurnBasedSlot = 1084;  // 回合制阵容设置
+	C2S_TurnBasedChallenge = 1085;  // 回合制挑战
+	C2S_ChatHistory        = 1086; //获取聊天记录
+	C2S_GuardIslandMultiplier = 1087; // 海岛守护（挂机副本）倍率
+	C2S_ElementInfo        = 1088; //获取元素信息
+	C2S_MainBattle = 1089; // 主界面副本挑战
+	C2S_ElementUpgrade = 1090;//元素升级
+	C2S_ElementBreakthrough = 1091;//元素突破
+	C2S_ElementPartnerSlot = 1092;//元素伙伴槽位
+	C2S_ElementChallenge = 1093;//元素挑战
+	C2S_WarRoomList = 1094;//战场房间列表
+	C2S_TitleList 	 = 1095;//称号列表
+	C2S_TitleCompose = 1096;//称号合成
+	C2S_TitleStart	 = 1097;//称号升星
+	C2S_TitleEquip 	 = 1098;//称号穿戴
+	C2S_ElementSweep = 1099;//元素扫荡
+	C2S_ElementSweepForward =1100;//元素扫荡上一层
+	C2S_LotteryInfo = 1101;//抽奖信息
+	C2S_LotteryRefresh = 1102;//刷新抽奖池
+	C2S_Lottery = 1103;//抽奖
+	C2S_LotterySelect = 1104;//抽奖 选择指定奖励
+	C2S_RefineInfo = 1105;//获取洗练信息
+	C2S_Refine = 1106;//洗练
+	C2S_RefineSelect = 1107;//保留洗练属性
+	C2S_ModuleOpenRecord=1108;//模块打开录入
+	C2S_MainBattlePrepare=1109;//主界面副本准备
+	C2S_UseAvatar = 1110;//换头像或头像框
+	C2S_FateCoin  = 1111;//战役命运金币
+	C2S_ModuleNew = 1112;//模块new
+	C2S_ArtifactStrength	= 1113; //神兵强化
+	C2S_ArtifactAdvance 	= 1114; //神兵进阶
+	C2S_ArtifactEquip 		= 1115; //装备神兵
+	C2S_PushingWall = 1116; //推墙请求
+	C2S_PushingWallInfo = 1117; //推墙信息请求
+	C2S_PartnerTalentActivate = 1118; //伙伴天赋激活
+	C2S_PartnerTalentReset = 1119; //伙伴天赋重置
+	C2S_SkipBattle = 1120;	//跳过战斗
+
+
+
+	// s2c
+	S2C_PlayerEnter 	= 5001; 		//玩家进入
+	S2C_PlayerExit 		= 5002; 		//玩家退出
+	S2C_SyncUserBase 	= 5003;	    	//基础信息
+	S2C_Move 			= 5004;			//移动
+	S2C_Attack 			= 5005;			//攻击
+	S2C_MonsterIn 		= 5006;			//怪物进入
+	S2C_MonsterOut 		= 5007;			//怪物消失
+	S2C_ObjectHpChange 	= 5008;			//血量变化
+	S2C_ObjectDie 		= 5009;			//死亡
+	S2C_AddSource 		= 5010;			//增加资源
+	S2C_TakeSource 		= 5011;			//扣除资源
+	S2C_LevelUp 		= 5012;			//角色升级
+	S2C_SkillCooldown 	= 5013;			//技能冷却
+	S2C_SyncUserStats   = 5014;			//同步属性
+	S2C_BuffList   		= 5015;			//Buff列表
+	S2C_AddBuff   		= 5016;			//添加buff
+	S2C_RemoveBuff   	= 5017;			//删除buff
+	S2C_SyncUserAdvanceInfo = 5018; 	//角色高级属性
+	S2C_ReJoinDesk 		= 5019;			//断线重连 加入房间
+	S2C_Revive 			= 5020;			//复活
+	S2C_InstanceTimeAdd = 5021;			//副本增加时间
+	S2C_TaskAccept 		= 5022;			//接任务
+	S2C_TaskRemove 		= 5023;			//删任务
+	S2C_TaskUpdate		= 5024;			//更新任务
+	S2C_MatchingResult	= 5025;			//匹配结果
+	S2C_MatchRoomJoin	= 5026;			//加入 1v1房间
+	S2C_MatchingStart	= 5027;			// 1v1开始
+	S2C_GameResultMatch	= 5028;			//结算 1v1
+	S2C_NewSkill		= 5029;			//新技能
+	S2C_Chat			= 5030; 		//聊天
+	S2C_GameResultEndlesstrials = 5031; //结算 爬塔
+	S2C_SyncUserEquipsInfo = 5032; 		//角色高级属性
+	S2C_ItemDrop 		= 5033;
+	S2C_GameResultMatchMelee = 5034;	//结算 混战
+	S2C_GameObjectAdd  	= 5035;			//添加实例
+	S2C_GameObjectDel  	= 5036;			//删除实例
+	S2C_PVPMeleeKill  	= 5037;			//混战击杀信息列表
+	S2C_Teleport 		= 5038;			//传送
+	S2C_SystemNotification = 5039;		//系统通知
+	S2C_GameResultDailyMap = 5040;		//每日必做副本结算
+	S2C_DailyMapScore 	= 5041;			//每日必做副本评价/波次
+	S2C_Lamp 			= 5042;			//跑马灯
+	S2C_HomeAutoEncounter = 5043;		//首页遭遇
+	S2C_PartnerSlotUpdate = 5044;		//伙伴槽位更新
+	S2C_PartnerUpdate 	= 5045;			//伙伴更新
+	S2C_PartnerAdd		= 5046;			//抽伙伴
+	S2C_PartnerCompose 	= 5047;			//合成伙伴
+	S2C_SyncUserPetInfo	= 5048;			//合成伙伴
+	S2C_GameResultBattleMap = 5049;		//副本结算
+	S2C_SyncUserSkillSlot = 5050;		//技能槽位
+	S2C_SyncUserBoxInfoPush = 5051;		//宝箱信息推送
+	S2C_SyncPartnerListPush = 5052;			//伙伴列表推送
+	S2C_GuildCopyRewardPush = 5053;		//工会副本奖励推送embedded
+	S2C_ActivityCumulativeRechargePush = 5054;	// 活动累计充值
+	S2C_CompulsoryWithdrawalPush        = 5055; //强制掉线的推送
+	S2C_MiningPush 			= 5056;	//采集
+	S2C_MonsterUpdate		= 5057;	//怪物更新
+	S2C_MonsterRefresh		= 5058;	//怪物刷新
+	S2C_PayRefreshPush = 5059; // 充值信息刷新推送
+	S2C_ConsecutiveKillsPush = 5060; // 连杀
+	S2C_SyncUserAvatarPush = 5061; // 同步用户头像信息推送
+	S2C_CommonNotificationPush = 5062; // 通用通知
+	S2C_FateCoinPush = 5063; //触发命运金币
+	S2C_ModuleNewPush = 5064; //新模块激活推送
+	S2C_ArtifactListPush = 5065; 	//神兵列表推送
+	S2C_ArtifactUpdatePush = 5066;  //神兵更新推送
+}
+
+message EmptyMessage{}
+
+
+enum Direction {
+	// 向上方向
+	UP = 0;
+	// 向上且向右方向
+	UP_RIGHT = 1;
+	// 向右方向
+	RIGHT = 2;
+	// 向下且向右方向
+	DOWN_RIGHT = 3;
+	// 向下方向
+	DOWN = 4;
+	// 向下且向左方向
+	DOWN_LEFT = 5;
+	// 向左方向
+	LEFT = 6;
+	// 向上且向左方向
+	UP_LEFT = 7;
+	// 无方向，通常用作默认值或无效值
+	NONE = 255;
+}
+
+//坐标
+message Point{
+	double X = 1;
+	double Y = 2;
+}
+
+// 属性
+message Stats{
+	Attribute attr = 1;  // 枚举
+	int32 	Num = 2;     // 值
+}
+
+//通用键值对
+message KeyValue{
+	int32 K = 1;
+	int32 V = 2;
+}
+
+//角色战斗属性
+enum Attribute {
+	INVALID_Attribute = 0;
+
+	PHYSICAL_ATTACK 	= 1;	// 物理攻击
+	MAGIC_ATTACK 		= 2;	// 魔法攻击
+	HEALTH 				= 3;	// 生命值
+	PHYSICAL_DEFENSE 	= 4;	// 物理防御
+	MAGIC_DEFENSE 		= 5;	// 魔法防御
+	DODGE 				= 6;	// 闪避值
+	HIT 				= 7;	// 命中值
+	CRITICAL_STRIKE 	= 8;	// 暴击值
+	TOUGHNESS 			= 9;	// 韧性值
+	ATTACK_SPEED 		= 10;	// 攻击速度(毫秒)
+	MOVE_SPEED 			= 11;	// 移动速度(毫秒)
+	MAX_HEALTH 			= 12;	// 最大生命值
+	PHYSICAL_ATTACK_PERCENTAGE 			= 13;  	// 物理攻击百分比加成
+	MAGIC_ATTACK_PERCENTAGE 			= 14;  	// 魔法攻击百分比加成
+	HEALTH_PERCENTAGE 					= 15;  	// 生命值百分比加成
+	PHYSICAL_DEFENSE_PERCENTAGE 		= 16;  	// 物理防御百分比加成
+	MAGIC_DEFENSE_PERCENTAGE 			= 17;  	// 魔法防御百分比加成
+	DODGE_PERCENTAGE 					= 18;  	// 闪避值百分比加成
+	HIT_PERCENTAGE 						= 19;  	// 命中值百分比加成
+	CRITICAL_STRIKE_PERCENTAGE 			= 20;  	// 暴击值百分比加成
+	TOUGHNESS_PERCENTAGE 				= 21;  	// 韧性值百分比加成
+	ATTACK_SPEED_PERCENTAGE 			= 22;  	// 攻击速度百分比加成
+	MOVE_SPEED_PERCENTAGE 				= 23;  	// 移动速度百分比加成
+	CRITICAL_DAMAGE_PERCENTAGE 			= 24;  	// 暴击伤害百分比加成
+	PVP_DAMAGE_PERCENTAGE 				= 25; 	// 对人增伤百分比加成
+	PVE_DAMAGE_PERCENTAGE 				= 26; 	// 对怪增伤百分比加成
+	EXP_INCREASE_PERCENTAGE 			= 27; 	// 杀怪经验百分比加成
+    ENERGY_RECOVERY_SPEED_PERCENTAGE 	= 28; 	// 体力值回复速度百分比加成
+    ITEM_DROP_RATE_PERCENTAGE 		 	= 29; 	// 物品爆率百分比加成
+	DMT_REDUCE_FIXED_PLAYER  			= 30;	// 对人减伤固定值
+	DMT_REDUCE_FIXED_MONSTER  			= 31; 	// 对怪减伤固定值
+	DMT_REDUCE_PERCENTAGE_PLAYER  		= 32;	// 对人减伤百分比
+	DMT_REDUCE_PERCENTAGE_MONSTER  		= 33; 	// 对怪减伤百分比
+	DMT_FINAL_REDUCE_FIXED  			= 34; 	// 最终减伤固定值
+	DMT_FINAL_REDUCE_PERCENTAGE  		= 35; 	// 最终减伤百分比
+ 	DMT_INCREASE_FIXED_PLAYER  			= 36; 	// 对人增伤的固定值
+ 	DMT_INCREASE_FIXED_MONSTER  		= 37; 	// 对怪增伤的固定值
+ 	DMT_FINAL_INCREASE_FIXED  			= 38; 	// 最终增伤固定值
+ 	DMT_FINAL_INCREASE_PERCENTAGE  		= 39; 	// 最终增伤百分比
+ 	SUCKING_BLOOD_PERCENTAGE  			= 40; 	// 吸血百分比
+ 	REDUCE_CONTROL_TIME_PERCENTAGE  	= 41; 	// 减控时间百分比
+	REFLECT_DAMAGE_PERCENTAGE  			= 42; 	// 反伤百分比
+	LIFE_RECOVERY_INCREASE_PERCENTAGE   = 43;   // 生命恢复增加百分比
+    LIFE_RECOVERY_DECREASE_PERCENTAGE   = 44;   // 生命恢复减少百分比
+    DAMAGE_CONVERT_PERCENTAGE    		= 45;   // 伤害转化百分比
+	DAMAGE_ABSORB_PERCENTAGE 			= 46;   // 伤害吸收百分比
+ 	CONTROL_TIME_REDUCTION_PERCENTAGE 	= 47; 	// 受控时间减少百分比(针对Skilltype: 4或5的技能)
+ 	CONTROL_TIME_REDUCTION_FIXED_VALUE 	= 48; 	// 受控时间减少固定值(毫秒)(针对Skilltype: 4或5的技能)
+ 	CONTROL_DAMAGE_REDUCTION_PERCENTAGE = 49; 	// 受控伤害减少百分比(针对Skilltype: 4或5的技能)
+ 	CONTROL_DAMAGE_REDUCTION_FIXED_VALUE= 50; 	// 受控伤害减少固定值(针对Skilltype: 4或5的技能)
+	WEAPON_ATTACK_PERCENTAGE 			= 51; 	// 武器百分比攻击力的效果
+	HEALTH_MAX_PERCENTAGE 				= 52;   // 生命值上限百分比加成
+	STUN                                = 53;   // 眩晕效果
+	STUN_RESISTANCE                     = 54;   // 眩晕抗性
+	POISON                              = 55; 	// 中毒效果
+	POISON_RESISTANCE                   = 56; 	// 中毒抗性
+    GOLD_EMPOWER         = 101;  // 金元素强化
+    WOOD_EMPOWER         = 102;  // 木元素强化
+    WATER_EMPOWER        = 103;  // 水元素强化
+    FIRE_EMPOWER         = 104;  // 火元素强化
+    EARTH_EMPOWER        = 105;  // 土元素强化
+    GOLD_RESISTANCE      = 106;  // 金元素抗性
+    WOOD_RESISTANCE      = 107;  // 木元素抗性
+    WATER_RESISTANCE     = 108;  // 水元素抗性
+    FIRE_RESISTANCE      = 109;  // 火元素抗性
+    EARTH_RESISTANCE     = 110;  // 土元素抗性
+	Main_EMPOWER =111;//主元素强化
+	EQUIP_STAR_PERCENTAGE  				= 500; 	// 装备升星几率
+	MAX_Attribute = 501;
+}
+
+// 属性来源
+enum AttrSource {
+	INVALID_AttrSource = 0;
+	STRENGTHEN	= 1; //强化
+}
+
+
+enum DeskStatus {
+	INVALID_DeskStatus = 0; // 未知状态
+    DESK_STATUS_CREATE = 1; // 创建桌子
+    DESK_STATUS_PLAYING = 2; // 游戏中
+    DESK_STATUS_IDLE = 3; // 已经清理，即为下一轮准备好
+    DESK_STATUS_DESTROY = 4; // 已销毁
+}
+
+// 房间信息
+message RoomInfo{
+	int32 RoomId = 1; 		//房间ID
+	string Name = 2;		//房间名字
+	int32 GameType = 3; 	//游戏类型
+	int32 MinEntryLimit = 4; // 最低进入限制
+	int32 MaxEntryLimit = 5; // 最高进入限制
+	int32 PlayerNum = 6;
+}
+
+//桌子信息
+message TableInfo {
+	int32 		RoomCfgId = 1; 	//房间配表ID
+	int64 		RoomUid = 2; 	//房间唯一ID
+	repeated  MonsterInfo  MonsterList= 3; //房间内怪物列表
+	int32 		BattleId = 4; //战斗ID
+}
+
+//实例类型
+enum ObjectType{
+	INVALID_ObjectType  = 0;
+	PLAYER   = 1;
+	PARTNER  = 2; //伙伴
+	MONSTER  = 3;
+	ROBOT    = 4;
+	BUFF     = 5;
+	DECOY    = 6; //替身
+}
+//通用实例
+message ObjectInfo{
+	ObjectType  Type 		= 1;
+	int64    	Uid         = 2;
+	int32	 	CfgID 		= 3;
+	int32  		Level 		= 4;
+	string   	Name		= 5;
+	Point    	Location    = 6;
+	Direction 	Direction 	= 7;
+	int32 		MaxHp 		= 8;
+	int32   	CurHp 		= 9;
+	int64  		OwnerUid 	= 10; //主人Uid
+	repeated BuffInfo BuffList 	= 11;
+	repeated Stats Attributes 	= 12;
+}
+
+//玩家简明信息
+message PlayerInfo{
+	int64    Uid            = 1;
+	string   Nickname       = 2;
+	string   HeadUrl        = 3;
+	Point    Location       = 4;
+	Direction Direction 	= 5;
+	int32  	Level 	= 6;
+	int32  	Job 	= 7;  //1战， 2法， 3祭
+	int32 	MaxHp 	= 8;
+	int32   CurHp 	= 9;
+	int32  	Gender 	= 10;
+	repeated BuffInfo BuffList 	= 11;
+	int32  	FateLevel 	= 12;
+	int32  	FateExp 	= 13;
+	repeated ObjectInfo PartnerList 	= 14; //伙伴列表
+	int64 	GuildId = 15;
+	string 	GuildName = 16;
+	int32   TitleId = 17;
+	int64 OfficialExp = 18;
+}
+
+ // 伙伴信息
+ message PartnerSceneInfo{
+    int64 Uid = 1;  //唯一id
+    int32 CfgId = 2;  //configid
+    int32 Level = 3;
+    int32 Star = 4;
+	Point    Location       = 5;
+	Direction Direction 	= 6;
+	int32 	MaxHp 	= 7;
+	int32   CurHp 	= 8;
+	int64  OwnerUid = 9; //主人Uid
+	repeated BuffInfo BuffList 	= 10;
+}
+
+//归属类型
+enum OwnershipType{
+	OWNERSHIP_NONE = 0;   //无归属
+	OWNERSHIP_PLAYER = 1; //玩家归属
+	OWNERSHIP_GUILD = 2;  //公会归属
+}
+
+// 归属
+message Ownership{
+	OwnershipType 	Type 	= 1;	//怪物归属类型
+	int64 			Uid 	= 2;	//怪物归属ID
+	string 			Name 	= 3;	//归属名字
+}
+//怪物信息
+message MonsterInfo{
+	int32    	CfgId			= 1;  	//配置ID
+	int64    	Uid            	= 2;  	//唯一ID
+	string   	Name       		= 3;
+	int32    	MaxHp     	    = 4;	//最大血量
+	int32    	CurHp     	    = 5;	//当前血量
+	Point    	Location       	= 6;	//位置
+	Direction 	Direction  		= 7;	//朝向
+	repeated BuffInfo BuffList 	= 8;
+	Ownership Ownership 		= 9;    //归属
+}
+
+ // 宠物信息
+ message PetSceneInfo{
+    int64 Uid = 1;  //唯一id
+    int32 CfgId = 2;  //configid
+    int32 Level = 3;
+    int32 Star = 4;
+	int64  OwnerUid = 5; //主人Uid
+	repeated BuffInfo BuffList 	= 6;
+}
+// 装备信息
+message EquipInfo{
+	repeated Stats Attributes = 1;
+	ItemQuality 	Quality = 2; // 品质
+}
+
+// 定义道具种类的枚举
+enum ItemType {
+	// 代表不进入包裹的数值类道具
+	NOT_IN_BAG = 0;
+	// 代表进入包裹且可被销毁的道具
+	IN_BAG_DISPOSABLE = 1;
+	// 代表进入包裹且可被销毁和使用的道具
+	IN_BAG_DISPOSABLE_AND_USABLE = 2;
+	// 代表进入包裹、可被销毁、带有时效的道具
+	IN_BAG_TIME_LIMITED = 3;
+	// 代表进入包裹、可被销毁和使用、带有时效的道具
+	IN_BAG_DISPOSABLE_USABLE_TIME_LIMITED = 4;
+	// 代表装备类，该类道具可装备、可分解
+	EQUIPMENT = 5;
+}
+
+// 道具品质
+enum ItemQuality {
+    INVALID_Quality = 0;
+    WHITE 	= 1; 	// 1 代表白色品质
+    GREEN 	= 2; 	// 2 代表绿色品质
+    BLUE 	= 3;  	// 3 代表蓝色品质
+    PURPLE 	= 4;	// 4 代表紫色品质
+    PINK 	= 5;	// 5 代表粉色品质
+    ORANGE 	= 6;	// 6 代表橙色品质
+    RED 	= 7;	// 7 代表红色品质
+	Rainbow = 8;	// 8 代表彩虹品质
+}
+
+// 道具信息
+message ItemInfo{
+	int32   	CfgId		= 1;  //配置ID
+	int64 		Uid 		= 2;
+	int64   	Num     	= 3;
+	int64   	CreateTime 	= 4;
+	ItemType 	Type 		= 5;  //道具类型
+	EquipInfo 	Equip 		= 6;  //装备属性
+}
+
+message Bag{
+	repeated ItemInfo ItemList = 1;
+}
+
+message DailyItemUsed {
+	int32 CfgId = 1; //道具配置ID
+	int64 Num = 2; //使用数量
+}
+
+enum EquipSlot{
+	INVALID_EquipSlot 	 =0;
+	Weapon        	     =1;  // 1: 代表武器
+	Clothes              =2;  // 2: 代表衣服
+	Helmet               =3;  // 3: 代表头盔
+	Necklace             =4;  // 4: 代表项链
+	LeftRing             =5;  // 5: 代表左戒指
+	RightRing            =6;  // 6: 代表右戒指
+	LeftBracelet         =7;  // 7: 代表左手镯
+	RightBracelet        =8;  // 8: 代表右手镯
+	Belt                 =9;  // 9: 代表腰带
+	Boots                =10; // 10: 代表靴子
+	Greaves              =11; // 11: 代表护腿
+	Pendant				 =12; // 12: 代表玉佩
+	MaxEquipSlot	     =13;
+}
+enum SkillsSlot{
+	INVALID_SkillsSlot	 =0;
+	MaxSkillsSlot	     =13;
+}
+enum PetsSlot{
+	INVALID_PetsSlot	 =0;
+	MaxPetsSlot	     =21;
+}
+// 槽位:装备、强化、升星
+message SlotInfo{
+	ItemInfo Item 	= 1;
+	int32	Enhance = 2; // 强化等级
+	int32 	Stars 	= 3; // 升星等级
+	repeated int32 	Gemstone 	= 4; //宝石
+}
+enum GemstoneSlot{
+	INVALID_GemstoneSlot	 =0;
+	MaxGemstoneSlot	     =4;
+}
+
+//任务分类
+enum TaskClass {
+	INVALID_TaskClass 	= 0;
+	DAILY 	= 1;      // 每日任务
+	WEEKLY 	= 2;     // 周常任务
+	ACHIEVEMENT = 3; // 成就任务
+	ROUTINE = 4;    // 日常任务
+	DAILY_ACTIVITY = 5;    // 日活跃
+	WEEKLY_ACTIVITY = 6;    // 周活跃
+	MAINLINE = 7; // 主线任务
+	VIP = 8;//VIP任务
+	SEVENDAY=9;//开服七天乐
+	SEVENDAY_ACTIVITY=10;//开服七天乐活跃
+	OFFICIAL_COMBAT = 11; // 官职系统中的战斗类任务
+	OFFICIAL_PET = 12; // 官职系统中的宠物类任务
+	OFFICIAL_CULTIVATION = 13; // 官职系统中的养成类任务
+}
+
+//任务类型
+enum TargetType {
+	TASK_TARGET_TYPE_INVALID = 0; // 无效类型
+	ROLE_POWER_REQUIREMENT = 100; // 角色战力需求
+	KILL_MONSTER_REQUIREMENT = 101; // 累积杀怪需求
+	ROLE_LEVEL_REQUIREMENT = 102; // 角色等级需求
+	PVE_INSTANCE_ENTRY_REQUIREMENT = 103; // 累积进入PVE副本次数需求
+	TOTAL_PHYSICAL_STRENGTH_CONSUMED_REQUIREMENT = 104; // 累计消耗体力值需求
+	EQUIPMENT_STRENGTHENING_LEVEL_REQUIREMENT = 105; // 全身装备强化等级需求
+	EQUIPMENT_UPGRADING_STAR_LEVEL_REQUIREMENT = 106; // 全身装备升星等级需求
+	SKILL_UPGRADING_REQUIREMENT = 107; // 技能的升级需求
+	TOTAL_GOLD_COINS_CONSUMED_REQUIREMENT = 108; // 累积消耗金币总量的需求
+	TIME_RANGE = 109; 	// 时间段
+	DAILY_ACTIVITY_LEVEL= 110; // 日活跃度
+	WEEKLY_ACTIVITY_LEVEL= 111; // 周活跃度
+	TOTAL_BOOST_PURCHASES = 112; // 累计购买体力次数
+  TOTAL_CHALLENGES_IN_ARENA = 113; // 累计进行乱斗之王挑战的次数
+  TOTAL_ATTEMPTS_IN_ENDLESS_TRIALS = 114; // 无尽试炼的挑战层数
+  TOTAL_KILLS_OF_NORMAL_MONSTERS = 115; // 累计击杀普通怪物的数量
+  TOTAL_KILLS_OF_BOSS_MONSTERS = 116; // 累计击杀boss怪物的数量
+  TOTAL_SHOP_PURCHASES_WITH_GOLD = 117; // 累计金币商城购买道具次数
+  TOTAL_SHOP_PURCHASES_WITH_COUPONS = 118; // 累计点券商城购买道具次数
+  TOTAL_SHOP_PURCHASES_WITH_SOULS = 119; // 累计战魂商城购买道具次数
+  TOTAL_SHOP_PURCHASES_WITH_TRIAL_TOKENS = 120; // 累计试炼商城购买道具次数
+  TOTAL_ACQUIRED_SOULS = 121; // 累计获得战魂的数量
+  TOTAL_ACQUIRED_TRIAL_TOKENS = 122; // 累计获得试炼凭证的数量
+	TOTAL_ITEM_CONSUMPTION = 123; // 累计消耗道具数量
+	TOTAL_BOX_OPENED = 150; // 累积开箱的数量
+	BATTLE_CHAPTERS_CLEARED = 151; // 通关战役的章节
+	BOSS_LEVELS_CLEARED = 152; // 通关首领的关卡
+	TRIAL_TOWER_FLOORS_CLEARED = 153; // 通关试炼塔的层数
+	RELIC_CHAPTERS_CLEARED = 154; // 遗迹通关的章节
+	VIP_LEVEL = 155; // 代表解锁VIP等级
+	TOTAL_MATERIAL_INSTANCE_CHALLENGE = 156; // 代表累计挑战材料副本的次数
+	TOTAL_MULTI_VS_MULTI_ARENA_CHALLENGE = 157; // 代表累计进行乱斗之王挑战的次数（多V多），扣除次数即计数
+	TOTAL_BOSS_CHALLENGE = 158; // 代表累计挑战首领的次数，进入副本即算
+	TOTAL_RELIC_CHALLENGE = 159; // 代表累计挑战遗迹的次数，进入副本即算
+	UNLOCK_PARTNER_SLOT = 160; // 解锁第X个伙伴栏
+	UPGRADE_ANY_PARTNER_LEVEL = 161; // 升级任意一个伙伴等级至X级
+	TOTAL_PET_EGGS_OPENED = 162; // 累计打开X个宠物蛋
+	ANY_EQUIP_STRENGTHENED_TO_LEVEL = 163; // 任意装备格强化至X
+	TOTAL_EXPERIENCE_FB_CLEARED = 164; // 通关X次经验副本
+	TOTAL_GOLD_FB_CLEARED = 165; // 通关X次金币副本
+	ANY_PET_UPGRADED_TO_LEVEL = 166; // 任意宠物升至X级
+	CHEST_LEVEL_UPGRADED = 167; // 宝箱等级升至X级
+	ANY_EQUIP_STAR_UP_TIMES = 168; // 任意装备升星X次
+	SEVENDAY_TASK_DAY_ALL_COMPLETED = 169; // 完成七日任务的第X天全部任务
+	SEVENDAY_TASK_ALL_COMPLETED = 170; // 完成七日任务全部任务
+	SEVENDAY_TASK_GIFT_PURCHASED = 180; // 购买七日任务礼包
+	SKILL_UPGRADING_TIMES = 181; // 技能升级次数
+	MAIN_BATTLE =182;//通关主线副本
+	PARTNER_RECEIVE=183;//伙伴抽取
+	WORLD_BOSS_PARTICIPATION = 184; // 参与世界boss X 次
+	GUARD_ISLAND_INSTANCE = 185; // 挂机副本 X 次
+	PET_COMPOSE_TIMES = 186; // 合成宠物 X 次
+	TURN_BASED_PK_TIMES = 187; // 回合制PK X 次
+	SOUL_STONE_INSTANCE = 188; // 魂石副本 X 次
+	PARTNER_ON_STAGE_TIMES = 189; // 伙伴上阵 X次
+	SKILL_ADVANCED_TIMES = 190; // 进阶技能 X次
+	JOIN_GUILD = 191; // 加入公会
+	NORMAL_REFINE_TIMES = 192; // 普通洗练 X次
+	STAR_UP_STONE_INSTANCE = 193; // 升星石副本X次
+	BOOK_PAGE_INSTANCE = 194; // 书页副本X次
+	SPECIAL_REFINE_TIMES = 195; // 特殊洗练X次
+	ENHANCE_STONE_INSTANCE = 196; // 完成强化石副本X次
+	ENDLESS_TRIALS_STAGE = 197; // 完成一战到底 X关
+	FIVE_ELEMENTS_INSTANCE = 198; // 五行副本X次
+	GEMSTONE_INLAY_TIMES = 199; // 镶嵌X次宝石
+	EQUIP_STAR_TO_X = 200; // 一件装备升到X星
+	RELIC_TOTAL_STAR = 201; // 遗迹累计获得X星
+	TOTAL_STRENGTHEN_TIMES = 202; // 强化X次
+	DRAW_GREEN_PET_EGGS = 203; // 抽取 X 次绿色宠物蛋
+  DRAW_PURPLE_PET_EGGS = 204; // 抽取 X 次紫色宠物蛋
+  DRAW_ORANGE_PET_EGGS = 205; // 抽取 X 次橙色宠物蛋
+  COMPOSE_BLUE_COMMON_PETS = 206; // 合成出 X 个蓝色凡品宠物
+  COMPOSE_BLUE_ELITE_PETS = 207;  // 合成出 X 个蓝色尊品宠物
+  COMPOSE_PURPLE_COMMON_PETS = 208; // 合成出 X 个紫色凡品宠物
+  COMPOSE_PURPLE_ELITE_PETS = 209;  // 合成出 X 个紫色尊品宠物
+  COMPOSE_ORANGE_COMMON_PETS = 210; // 合成出 X 个橙色凡品宠物
+  COMPOSE_ORANGE_ELITE_PETS = 211;  // 合成出 X 个橙色尊品宠物
+  COMPOSE_RED_COMMON_PETS = 212;    // 合成出 X 个红色凡品宠物
+  COMPOSE_RED_ELITE_PETS = 213;     // 合成出 X 个红色尊品宠物
+  COMPOSE_YELLOW_ELITE_PETS = 214;  // 合成出 X 个黄色尊品宠物
+  ALL_GREEN_PARTNERS_REACH_STAR = 215;  // 持有的绿色伙伴全部达到 X 星
+  ALL_BLUE_PARTNERS_REACH_STAR = 216;   // 持有的蓝色伙伴全部达到 X 星
+  ALL_PURPLE_PARTNERS_REACH_STAR = 217; // 持有的紫色伙伴全部达到 X 星
+  ALL_ORANGE_PARTNERS_REACH_STAR = 218; // 持有的橙色伙伴全部达到 X 星
+  ALL_RED_PARTNERS_REACH_STAR = 219;    // 持有的红色伙伴全部达到 X 星
+  ALL_YELLOW_PARTNERS_REACH_STAR = 220; // 持有的黄色伙伴全部达到 X 星
+  BATTLEFIELD_OPEN_BLUE_LUCKY_BAG_TIMES = 221;   // 战场开启蓝色福袋 X 次
+  BATTLEFIELD_OPEN_PURPLE_LUCKY_BAG_TIMES = 222; // 战场开启紫色福袋 X 次
+  BATTLEFIELD_OPEN_ORANGE_LUCKY_BAG_TIMES = 223; // 战场开启橙色福袋 X 次
+  BATTLEFIELD_TOTAL_KILLS = 224;          // 战场累积击杀敌对目标（含伙伴）X 人
+  BATTLEFIELD_TOTAL_CHESTS_OPENED = 225;  // 战场累积开启宝箱 X 个
+  TOTAL_REFINE_TIMES = 226; // 累积洗炼 X 次（随机和定向全计算）
+  MAIN_ALL_EQUIP_SLOTS_STRENGTHENED_TO_LEVEL = 227;       // 主角全身槽位强化至 X 级
+  MAIN_ALL_EQUIP_SLOTS_STAR_TO_LEVEL = 228;               // 主角全身槽位升星至 X 星
+  MAIN_ALL_REFINE_SLOTS_OPENED_TOTAL = 229;               // 主角全身洗炼槽位开启总量达到 X 个
+  MAIN_ALL_EQUIP_SLOTS_GEMSTONE_LEVEL_AT_LEAST = 230;     // 主角全身镶嵌 X 级以上魂石
+  ALL_EQUIP_SLOTS_STRENGTHENED_TO_LEVEL = 231;            // 己方全部槽位强化至 X 级
+  ALL_EQUIP_SLOTS_STAR_TO_LEVEL = 232;                    // 己方全部槽位升星至 X 星
+  ALL_EQUIP_SLOTS_GEMSTONE_LEVEL_AT_LEAST = 233;          // 己方全部槽位镶嵌 X 级以上魂石
+  ALL_REFINE_ENTRIES_OPENED_TOTAL = 234; // 己方全部洗炼槽位开启总量达到 X 个
+	RELIC_CHAPTERS_ALL_3STARS = 235; // 235：遗迹第X章所有关卡均三星
+	FIVE_ELEMENTS_INSTANCE_CLEARED_FLOOR = 236; // 236：五行副本通关第X层
+	PUSHING_WALL_PLAY_TIMES = 237; // 完成推墙玩法X次
+	ARTIFACT_UPGRADE_TIMES = 238; // 神兵升级X次
+	TICKET_EXCHANGE_TIMES = 239; // 兑换门票X次
+	FIVE_ELEMENT_EMPOWER_TIMES = 240; // 五行赋能X次
+	LUCKY_BAG_OBTAINED_TOTAL = 241; // 获取X个福袋
+	LUCKY_BAG_OPENED_TOTAL = 242; // 开启X个福袋
+	EQUIP_ITEMS_WORN_TOTAL = 243; // 穿戴X件装备
+	TASK_TARGET_TYPE_MAX = 244; // MAX
+}
+
+//任务状态
+enum TaskStatus{
+	INVALID_TaskStatus = 0; // 无效
+    IN_PROGRESS = 1;     // 任务进行中
+    COMPLETED = 2;       // 任务已完成
+    REWARDED = 3;        // 奖励已领取
+}
+
+//任务目标
+message TargetInfo{
+	TargetType Type =1;  //类型
+	int32 TargetId   =2;  //目标ID,根据TargetType决定
+	int32 TargetNum  =3;  //目标数量
+	int32 Amount     =4;  //已完成的数量
+	bool Completed   =5;  //目标是否已经完成
+}
+
+//任务信息
+message TaskInfo{
+	int32   	CfgId	= 1;  	//任务配置ID
+	TaskClass 	Class 	= 2;    //任务类型
+	TaskStatus  Status 	= 3;    //状态
+	TargetInfo  Target 	= 4;
+	int64 RefreshTime 	= 5;
+}
+
+message DBTask{
+	repeated TaskInfo Tasks = 1;
+}
+
+message TitleInfo{
+    int32 CfgId = 1;
+    int32 Star = 2;  // 星级
+    int32 ActivationTime = 3; //激活时间(时间戳)
+}
+message DBTitle{
+	repeated TitleInfo Titles = 1;
+}
+
+message SkillInfo{
+	int32   	CfgId		= 1;  	//配置ID
+	int64		Cooldown 	= 2;	//冷却时间
+	int32		Advanced 	= 3;	//进阶等级
+}
+
+message BuffInfo{
+    int32 BuffId   = 1;  //配置ID
+    int32 RemainingTime = 2; //剩余时间(秒)
+	repeated Stats BuffStats = 3; // 属性
+	int64 OwnerUid =4 ;  //释放者UID
+}
+
+// 定义 BuffInfo 消息类型
+message DBBuffInfo {
+	int32 Id = 1; // buffID
+	int32 BuffType = 2; // 类型 1 代表为增益效果，2 代表为减益效果
+	int32 Mark = 3; // 1 被动，1000 技能引用的效果
+	repeated Stats BuffStats = 4; // 属性
+	int64 StartTime = 5; // 创建时间
+	int64 OverTime = 6; // 结束时间
+	int64 TickTime = 7; // 生效间隔
+	int64 CDTime = 8; // 冷却时间
+	int32 TickFrequency = 9;
+	int32 Pretype = 10; // 大类
+	int64 OwnerId = 11; // 拥有者
+	int32 Status = 12; // 状态
+}
+message DBBuffList {
+	repeated DBBuffInfo buffs = 1;
+}
+
+//PVP类型
+enum MatchType{
+	INVALID_MatchType = 0;
+    SINGLE_COMBAT = 3;    // 1对1的对战
+    FREE_FOR_ALL = 4;    // 混战模式
+}
+message Rank {
+		int64 Uid =1 ;  //
+		int64 Num = 2 ;     //名次
+		string Avatar= 3 ;//头像
+		string Name = 4 ;  //昵称
+		int64 Value= 5 ;   //数值
+		int32 Sex = 6;//性别
+		int32 Job = 7;//职业
+		int32 RobotCId = 8;//机器人ID
+		string ServerName = 9;//服务器
+		int32 AvatarV2 = 10;//头像
+		int32 Frame = 11;//头像框
+
+}
+message RankInfo {
+	repeated Rank List =1;
+}
+
+//聊天频道类型
+enum ChatType{
+	INVALID_ChatType = 0;
+	SYSTEM 		= 1; //系统
+	WORLD  		= 2; //世界
+	GUILD  		= 3; //行会
+	SCROLLING 	= 4; //跑马灯
+	PROMPT		= 5; //系统飘字
+	ZONE		= 6; //战区
+}
+
+// 位移类型
+enum TeleportType{
+	INVALID_TeleportType = 0;
+	BLINK  		= 1; //闪现
+	PUSH 		= 2; //击退
+
+}
+//合成的属性
+message ComposeInfo{
+    // int32 ConfigId   = 1;  //道具Id
+    int64 Uid   = 1;  //道具Id
+    int32 Num = 2; //数目
+}
+
+enum MapType {
+	// 无效枚举值，通常用于表示未设置或无效状态
+	MAP_TYPE_UNSPECIFIED = 0;
+
+	PVE_PEACEFUL_MAP = 1; // 代表PVE玩法中的和平模式地图
+	PVE_WAR_MAP = 2;      // 代表PVE玩法中的战争模式地图
+	PVP_ONE_ON_ONE_MAP = 3; // 代表PVP玩法中的1对1模式地图
+	PVP_MULTI_ON_MULTI_MAP = 4; // 代表PVP玩法中的多对多模式地图
+	SOLO_TOWER_MAP = 5; // 代表个人爬塔类玩法地图
+	WORLD_BOSS_MAP = 6; // 世界boss
+	EXPERIENCE_FB_MAP = 7; // 代表经验副本
+	GOLD_FB_MAP = 8; // 代表金币副本
+	ENHANCE_STONE_FB_MAP = 9; // 代表强化石副本
+	BOOK_PAGE_FB_MAP = 10; // 代表书页副本
+	STAR_UP_STONE_FB_MAP = 11; // 代表升星石副本
+	SOUL_STONE_FB_MAP = 12; // 代表魂石副本
+	GUIDANCE_FB_MAP = 13; //  代表新手引导
+    BATTLE_MAP = 14; // 战役（主线）副本
+    BOSS_MAP = 15; // 首领副本
+    TRIAL_TOWER_MAP = 16; // 试炼塔
+    RELIC_MAP = 17; // 遗迹
+  }
+
+ // 伙伴信息
+message PartnerInfo{
+    int64 Uid = 1;  //唯一id
+    int32 CfgId = 2;  //configid
+    int32 Level = 3;
+    int32 Star = 5;
+    repeated SkillInfo Skills = 6;
+	int64 Points = 7; 	//天赋点数
+	repeated KeyValue Talents = 8; //天赋
+}
+message PartnerSlotInfo{
+    int32 SlotId = 1;
+	int64 PartnerUid = 2;
+	repeated SlotInfo Equips = 3; //穿戴装备,未穿槽位null
+	int32 TitleId = 4; // 穿戴的称号ID
+}
+message Userbox{
+	int32 Nowlevel = 1; //当前等级
+	repeated ItemInfo NowOpenRes = 2;//当前开启的物品
+	int64 NextBoxRecoveryTime    = 3; //剩余升级宝箱时间
+	int32 NowOpenLevel = 4; //当前开启的宝箱等级
+	int32 Job =5 ; //职业
+}
+ // 宠物信息
+ message PetSlotInfo{
+    int64 Uid = 1;  //唯一id
+    int32 CfgId = 2;  //configid
+    int32 Level = 3;
+    int32 Star = 4;
+    int32 Exp = 5;
+	int32 Enhance = 6;
+	int32 Quality = 7;
+	int32 Skill = 8;
+    int32 ExpStar = 9;
+}
+
+enum GameOverType {
+	GameOverType_UNSPECIFIED = 0; // 未指定
+	GameOverTypeTime = 1;         // 时间到
+	GameOverTypePDead = 2;        // 死亡复活超时
+	GameOverTypeMDead = 3;        // 怪死光
+	GameOverTypeDeadFaild = 4;    // 死亡失败
+	GameOverTypeCopySweep = 5;    // 扫荡结果
+}
+// 工会信息
+message GuildInfo {
+	int64 Id = 1; // 工会ID
+	string Name = 2; // 工会名称
+	string Description = 3; // 工会描述
+	int32 Level = 4; // 工会等级
+	int32 MemberCount = 5; // 成员数量
+	int32 MaxMembers = 6; // 最大成员数量
+	int64 LeaderId = 7; // 会长ID
+	string LeaderName = 8; // 会长名称
+	int64 CreatedAt = 9; // 创建时间
+	int32 Application = 10; // 是否申请 0：加入工会 1:  已申请 2: 未申请
+	int64 GuildExp = 11;	// 工会经验
+	repeated GuildSkillInfo Skills = 12;
+}
+
+//技能列表
+message GuildSkillInfo {
+	int32 CfgId = 1; // 技能ID
+	int32 Level = 2; // 技能等级
+	int32 Exp = 3; // 技能经验
+}
+
+// 工会申请信息
+message GuildApplyInfo {
+	int64 ApplicantId = 1; // 申请者ID
+	string ApplicantName = 2; // 申请者名称
+	int32 ApplicantLevel = 3; // 申请者等级
+	int64 ApplyTime = 4; // 申请时间
+	int32 ApplicantTotalCombat = 5;//申请者战斗力
+}
+
+// 工会成员信息
+message GuildMemberInfo {
+	int64 MemberId = 1; // 成员ID
+	string MemberName = 2; // 成员名称
+	int32 MemberLevel = 3; // 成员等级
+	int32 Position = 4; // 成员职位 1会长 2管理员 3成员
+	int64 JoinTime = 5; // 加入时间
+	int32 MemberTotalCombat = 6; // 成员战斗力
+	int32 MemberOnline = 7; // 成员最后登录时间，在线为0
+	int32 Points = 8; // 成员贡献度
+}
+// 工会商店购买信息
+message GuildShopBuyInfo {
+    int32 ItemId = 1; // 商品ID
+    int32 BuyNum = 2; // 自己购买数量
+    int32 TotalNum = 3; // 工会总购买数量
+}
+
+// 每个角色的洗炼数据
+message CharacterRefineData {
+  CharacterSlot character_slot = 1;  // 角色槽位
+  repeated EquipRefineData equip_refines = 2;  // 该角色的所有装备洗炼数据
+}
+// 每个装备的洗炼数据
+message EquipRefineData {
+  EquipSlot equip_slot = 1;          // 装备槽位
+  repeated RefineData refined_stats = 2;           // 4个洗炼槽位的属性数据
+}
+message RefineData {
+  RefinedSlot refined_slot = 1;          // 装备槽位
+  Stats stats = 3; // 该槽位可能的属性列表
+}
+
+// 观察玩家信息
+message ObservePlayerInfo {
+	message PartnerStats{
+    int32       Combat = 1; // 战斗力
+    repeated Stats Attributes = 2;
+    int64 PartnerUid = 3; // 伙伴Uid
+  }
+  int32       TotalCombat = 1; // 总战斗力
+  int32       Combat = 2; // 主角战斗力
+  repeated Stats Attributes = 3; //主角属性
+  repeated PartnerStats PartnersStats = 4; //伙伴属性
+	repeated SlotInfo SlotInfo = 5; //装备槽位信息
+	PetSlotInfo Pets = 6;	//上阵宠物信息
+	repeated PartnerSlotInfo Partners = 7;	//伙伴信息
+	int32 VipLevel = 8; //vip等级
+	int32 Job = 9; //职业
+	int32 Level = 10; //等级
+	int32 Sex = 11; //性别
+  string Nickname = 12; //昵称
+	repeated PartnerInfo PartnerInfo = 13; //伙伴信息
+	string GuildName = 14; //工会名称
+  repeated CharacterRefineData character_refines = 15; // 角色洗炼数据
+  int32 Avatar =16; //头像
+  int32 Frame = 17; //头像框
+	int64 OfficialExp = 18; //官职经验
+}
+
+message ChatHistory  {
+	int64 Uid = 1;    // 发送者UID
+	string Name = 2;  // 发送者昵称
+	string Msg = 3;   // 消息内容
+	int64 Time = 4;   // 发送时间
+}
+enum ElementSlot{
+	INVALID_ElementpSlot 	 =0;
+	GoldEmpower         = 1;  // 金元素强化
+	WoodEmpower         = 2;  // 木元素强化
+	WaterEmpower        = 3;  // 水元素强化
+	FireEmpower         = 4;  // 火元素强化
+	EarthEmpower        = 5;  // 土元素强化
+	GoldResistance      = 6;  // 金元素抗性
+	WoodResistance      = 7;  // 木元素抗性
+	WaterResistance     = 8;  // 水元素抗性
+	FireResistance      = 9;  // 火元素抗性
+	EarthResistance     = 10; // 土元素抗性
+	MaxElementpSlot	     =11;
+}
+message ElementEmpower{
+    int32  SlotId = 1; //槽位Id
+    int32  Level = 2; //赋能等级
+	int32  BreakLevel = 3; //突破等级
+}
+message ElementEmpowerList{
+	repeated ElementEmpower Elements = 1;
+}
+message ElementUids{
+	repeated int64 Uids = 1;
+}
+message LotteryPoolInfo {
+	int64 RefreshTime = 1; // 系统上次刷新时间
+	repeated PrizePool PrizePool = 2; // 奖励池
+	repeated PrizePool HavePrizePool = 3; // 已有奖励池
+	int32 Progress = 4; // 进度
+	int32 NeedItemId = 5; // 指定道具Id
+	int32 FreeNum = 6; // 免费次数
+}
+message PrizePool{
+	int32  Id = 1; // 道具ID
+	int32  ItemId = 2; // 道具ID
+	int32  Num = 3;
+	int32  Rate = 4; // 概率
+}
+
+// CharacterSlot 枚举定义，表示角色槽位
+enum CharacterSlot {
+	CHARACTER_SLOT_UNSPECIFIED = 0; // 未指定/默认值
+  CHARACTER_SLOT_1 = 1;            // 槽位 1
+  CHARACTER_SLOT_2 = 2;            // 槽位 2
+  CHARACTER_SLOT_3 = 3;            // 槽位 3
+  CHARACTER_SLOT_4 = 4;            // 槽位 4
+  CHARACTER_SLOT_5 = 5;            // 槽位 5
+	CHARACTER_SLOT_MAX = 6;          // 最大槽位数
+}
+
+// RefinedSlot 枚举定义，表示洗练槽位的索引
+enum RefinedSlot {
+  REFINED_SLOT_UNSPECIFIED = 0;  // 未指定/默认值，必须为0
+  REFINED_SLOT_1 = 1;            // 洗练槽位 1
+  REFINED_SLOT_2 = 2;            // 洗练槽位 2
+  REFINED_SLOT_3 = 3;            // 洗练槽位 3
+  REFINED_SLOT_4 = 4;            // 洗练槽位 4
+	REFINED_SLOT_MAX = 5;            // 最大槽位数
+}
+
+enum FateCoinEffect {
+    FC_NONE = 0;
+    FC_EFFECT_NONE = 1;               // 1：代表没有产生任何效果
+    FC_EFFECT_BUFF = 2;               // 2：代表buff表中的效果
+    FC_EFFECT_RANDOM_DEATH = 3;       // 3：代表随机死亡一个角色
+    FC_EFFECT_REVIVE  = 5;            // 5：复活
+    FC_EFFECT_REVIVE_RECOVER_HP  = 6; // 6：复活,回血
+}
+
+enum ReliveType {
+    RT_NONE = 0;
+    RT_RELIVE_NORMAL = 1; //正常复活
+}
+
+
+enum ModuleState {
+    MS_NONE = 0;
+    MS_REGISTER = 1; //注册
+    MS_USE = 2; //使用
+}
+
+//功能信息
+message ModuleInfo {
+    int32 CfgId = 1;
+    ModuleState State = 2;
+}
+
+message ModuleInfos {
+    repeated ModuleInfo Infos = 2;
+}
+
+// 器魂
+message ArtifactSoul {
+    int32 CfgId = 1;  // 配置的WeaponID
+    int32 Level = 2;
+    int64 Exp   = 3;
+}
+
+// 神兵
+message ArtifactInfo {
+    int32               	CfgId 	= 1;
+    repeated ArtifactSoul 	Soul 	= 2;
+	bool               	IsEquip = 3;
+}

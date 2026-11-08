@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
+  m_Name: AssetBundleCollectorSetting
+  m_EditorClassIdentifier: 
+  ShowPackageView: 1
+  ShowEditorAlias: 1
+  UniqueBundleName: 1
+  Packages:
+  - PackageName: Main
+    PackageDesc: 
+    EnableAddressable: 0
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
+    Groups:
+    - GroupName: Scene
+      GroupDesc: "\u573A\u666F\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Scene
+        CollectorGUID: fb8c8dc3987ba4ed2b5db5eca74b0330
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Dll
+      GroupDesc: "\u70ED\u66F4\u4EE3\u7801"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Dll
+        CollectorGUID: 01b2fbf7a6f704a2686595ccdb3a192f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Common
+      GroupDesc: "\u5E38\u7528\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Common/Atlas
+        CollectorGUID: 9743ce60e7dd1574da55c492bdd237b1
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackTopDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Common/Controller
+        CollectorGUID: 91a19fab5f97c446da610223b59a1410
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Common/Material
+        CollectorGUID: 5e2ab43a08f0641fb828a65fb3295620
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Common/Prefab
+        CollectorGUID: b465b9da8a67f4c3b9abfc018e4e43f0
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Common/ScriptableObject
+        CollectorGUID: 7d11699a16c3b4a3b8a75a2e58654a57
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Common/Texture
+        CollectorGUID: 4df750fbd101f9247aa8867648516e5c
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Other
+      GroupDesc: "\u5176\u4ED6\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Other/Animations
+        CollectorGUID: 8e5201aa55e23fd42b4a96e0c06ce20f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Other/Audios
+        CollectorGUID: b40d330b2bf0b469d9c7324d7cc75eb1
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Other/Fonts
+        CollectorGUID: 8f2b41a1c61454545bdf96cde3e6c884
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Other/TextAssets
+        CollectorGUID: 5b675bc45672347c69c858fa29e8f310
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/HotUpdateResources/Main/Other/Effects
+        CollectorGUID: e00d629d318d5c44ba376596c8e89e48
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackTopDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Shader
+      GroupDesc: "Shader\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Shader
+        CollectorGUID: af3fab857f2914d3f8697644432c024e
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Raw
+      GroupDesc: "\u539F\u751F\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Raw
+        CollectorGUID: f81b15da1e2b64733af61d0154dc8d4d
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: UIPrafabs
+      GroupDesc: "UI\u9884\u5236\u4F53"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/UI
+        CollectorGUID: 334796100a89a974fad32ea59913d75a
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackCollector
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Terrain
+      GroupDesc: "Terrain\u573A\u666F\u5730\u56FE\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Terrain
+        CollectorGUID: 892abc245682bc247a8b898345d2f8e7
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Role
+      GroupDesc: "\u89D2\u8272\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/Main/Role
+        CollectorGUID: 9b55abae2ea3d2e47aa93580b4315fc2
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackTopDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+  - PackageName: AddOn1
+    PackageDesc: "\u5206\u53051"
+    EnableAddressable: 0
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
+    Groups:
+    - GroupName: Scene
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/AddOn1/Scene
+        CollectorGUID: a41f124d141514fdaa4b4ebd36f6737f
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Other
+      GroupDesc: "\u5176\u4ED6\u8D44\u6E90"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/HotUpdateResources/AddOn1/Other
+        CollectorGUID: f8a4b740986e54ff6854ab0c64e04f68
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "../pb";
+
+package pb;
+
+// 错误ID规范
+// 公共错误码 0~9999 内
+// 业务错误
+// - 前3位为 configs\gameconfig\config.xml 中的 功能模块，可以有 999 个功能模块
+// - 后2位为该模块下的错误码编号，可以有 99 个错误码
+// 100000 以上预留
+
+//错误码
+enum ErrorCode {
+    ERROR_CODE_SUCCESS = 0;
+    ERROR_CODE_INVALID_PARAMS = 1; //无效参数
+    ERROR_CODE_PLAYER_NOT_FOUND = 2;//找不到玩家
+    ERROR_CODE_MYSQL_FAIL = 10; //数据库操作失败
+
+    ERROR_CODE_NOT_CONFIG = 51; //找不配置
+    ERROR_CODE_ITEM_NOT_ENOUGH = 52; //道具不足
+    ERROR_CODE_LEVEL_NOT_ENOUGH = 53; //等级不足
+    ERROR_CODE_ILLEGAL_OPERATION = 54;  // 非法操作
+
+    ERROR_CODE_FUNCTION_NOT_OPEN = 1000; // 功能模块没有开启
+    ERROR_CODE_CHALLENGE_NO_TIMES = 1001; // 挑战次数不足
+    ERROR_CODE_CONFIG_NOT_FOUND = 1002; // 策划配置文件未找到
+
+    ERROR_CODE_REDIS_ERR_SCRIPT = 10000;//错误的redis脚本
+    ERROR_CODE_REDIS_PIPELINE_EXEC_FAIL = 10001;//Pipeline执行失败
+
+    ERROR_CODE_SCENE_NO_EXIST = 11001;//场景不存在
+    ERROR_CODE_PLAYER_DIE = 12001;//玩家死亡
+
+    ERROR_CODE_BUFF_EXISTS_HIGHER = 12101; //存在高等级的buff
+
+}
